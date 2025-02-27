@@ -5,14 +5,17 @@ import ArtSide2 from "@/public/art2.svg";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+const specialSections = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"];
+
 const FloatingArt = () => {
   const { activeSection } = useSectionStore();
+  const isSpecial = specialSections.includes(activeSection);
 
   return (
-    <div className={ `fixed top-0 h-screen overflow-hidden flex flex-col ${activeSection === "خدماتنا" ? "left-0" : "right-0"}` }>
+    <div className={ `fixed top-0 h-screen overflow-hidden flex flex-col ${isSpecial ? "left-0" : "right-0"}` }>
       <motion.div
         className="flex flex-col"
-        animate={ { y: [ "0%", "-50%" ] } }
+        animate={ { y: ["0%", "-50%"] } }
         transition={ {
           duration: 50,
           repeat: Infinity,
@@ -20,17 +23,8 @@ const FloatingArt = () => {
           ease: "linear",
         } }
       >
-        {
-          activeSection === "خدماتنا" ?
-            <>
-              <Image alt="زخرفة 1" src={ ArtSide2 } />
-              <Image alt="زخرفة 2" src={ ArtSide2 } />
-            </> :
-            <>
-              <Image alt="زخرفة 1" src={ ArtSide } />
-              <Image alt="زخرفة 2" src={ ArtSide } className="-my-6" />
-            </>
-        }
+        <Image alt="زخرفة 1" src={ isSpecial ? ArtSide2 : ArtSide } />
+        <Image alt="زخرفة 2" src={ isSpecial ? ArtSide2 : ArtSide } className={ isSpecial ? "" : "-my-6" } />
       </motion.div>
     </div>
   );

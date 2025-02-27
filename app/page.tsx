@@ -9,6 +9,7 @@ import ScrollNavigator from "./components/ScrollNavigator";
 import AboutUs from "./components/sections/AboutUs";
 import HowWeWork from "./components/sections/HowWeWork";
 import MainSec from "./components/sections/MainSec";
+import MarketingServices from "./components/sections/MarketingServices";
 
 
 export default function Home() {
@@ -24,12 +25,14 @@ export default function Home() {
       <MainSec />
       <AboutUs />
       <HowWeWork />
-
-      <section id="خدماتنا" className="h-screen flex justify-center items-center bg-accent">
-        <h1 className="text-4xl">خدماتنا</h1>
+      <MarketingServices />
+      <section id="الخدمات-الإبداعية" className="h-screen flex justify-center items-center bg-accent">
+        <h1 className="text-4xl"></h1>
       </section>
-
-   
+      
+      <section id="الخدمات-التقنية" className="h-screen flex justify-center items-center bg-accent">
+        <h1 className="text-4xl"></h1>
+      </section>
 
       <section id="فريق-العمل" className="h-screen flex justify-center items-center bg-secondary">
         <h1 className="text-4xl">فريق العمل</h1>

@@ -5,30 +5,52 @@ const sections = [
     { id: "الرئيسية", label: "01" },
     { id: "من-نحن", label: "02" },
     { id: "آلية-عملنا", label: "03" },
-    { id: "خدماتنا", label: "04" },
+    {
+        id: "خدماتنا",
+        label: "04",
+        subSections: [
+            { id: "الخدمات-التسويقية", label: "" },
+            { id: "الخدمات-الإبداعية", label: "" },
+            { id: "الخدمات-التقنية", label: "" }
+        ]
+    },
     { id: "فريق-العمل", label: "05" },
     { id: "خبراتنا", label: "06" },
     { id: "تواصل-معنا", label: "07" },
 ];
-
 const PageIndicator = () => {
     const { activeSection, setActiveSection } = useSectionStore();
-    let textColor = activeSection === "خدماتنا" ? "text-secondary" : "text-white";
-
+    const textColor = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection)
+    ? "text-secondary"
+    : "text-white";
 
     return (
         <div className="fixed right-[5.93rem] top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
-            { sections.map( ( section ) => (
-                <a
-                    onClick={ () => setActiveSection( section.id ) }
-                    key={ section.id }
-                    href={ `#${section.id}` }
-                    className={ `transition-all ${activeSection === section.id ? "text-active font-bold text-xl" : textColor
-                        }` }
-                >
-                    { section.label }
-                </a>
-            ) ) }
+            {sections.map((section) => (
+                <div key={section.id} className="flex flex-col items-center">
+                    <a
+                        onClick={() => setActiveSection(section.id)}
+                        href={`#${section.id}`}
+                        className={`transition-all ${activeSection === section.id ? "text-active font-bold text-xl" : textColor}`}
+                    >
+                        {section.label}
+                    </a>
+
+                    {section.subSections && (
+                        <div className="flex flex-col items-center space-y-4 mt-1">
+                            {section.subSections.map((sub) => (
+                                <a
+                                    key={sub.id}
+                                    onClick={() => setActiveSection(sub.id)}
+                                    href={`#${sub.id}`}
+                                    className={`w-2 h-2 rounded-full transition-all cursor-pointer ${activeSection === sub.id ? "bg-active" : "bg-white"}`}                                >
+                                    {sub.label}
+                                </a>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            ))}
         </div>
     );
 };

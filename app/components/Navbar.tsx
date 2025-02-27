@@ -21,7 +21,10 @@ const Navbar = () => {
         setActiveSection( id );
     };
 
-    let textColor = activeSection === "خدماتنا" ? "text-secondary" : "text-white";
+    const textColor = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection)
+    ? "text-secondary"
+    : "text-white";
+
 
     return (
         <nav className="fixed top-[5.25rem]  left-0 w-full z-50 px-[6.3rem]">

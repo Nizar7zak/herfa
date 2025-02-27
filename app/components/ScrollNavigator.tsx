@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useSectionStore } from "@/lib/store";
 
-const sections = [ "الرئيسية", "من-نحن", "آلية-عملنا", "خدماتنا", "فريق-العمل", "خبراتنا", "تواصل-معنا" ];
+const sections = [ "الرئيسية", "من-نحن", "آلية-عملنا", "الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية", "فريق-العمل", "خبراتنا", "تواصل-معنا" ];
 
 const ScrollNavigator = () => {
   const { setActiveSection } = useSectionStore();

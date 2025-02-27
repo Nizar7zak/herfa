@@ -6,7 +6,9 @@ import { useSectionStore } from '@/lib/store'
 
 const Icons = () => {
     const { activeSection } = useSectionStore();
-    let textColor = activeSection === "خدماتنا" ? "text-secondary" : "text-white";
+    const textColor = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection)
+    ? "text-secondary"
+    : "text-white";
 
 
     return (

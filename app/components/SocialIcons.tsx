@@ -13,8 +13,8 @@ const SocialIcons = () => {
     { id: "tiktok", icon: <FaTiktok />, link: "#" },
   ];
 
-  let color = activeSection === "خدماتنا" ? "text-white bg-secondary" : "text-secondary bg-white";
-
+  const color = [ "الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية" ].includes( activeSection ) ? "text-white bg-secondary"
+    : "text-secondary bg-white"
   return (
     <div className="flex gap-2 justify-center">
       { icons.map( ( { id, icon, link } ) => (

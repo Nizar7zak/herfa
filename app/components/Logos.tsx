@@ -10,7 +10,7 @@ import Vision2 from "@/public/vision2.svg";
 
 const Logos = () => {
     const { isHome, activeSection } = useSectionStore();
-    const isActive = activeSection === "خدماتنا";
+    const isActive = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection)
 
     const assets = {
       logo: isActive ? Logo2 : Logo,
