@@ -7,9 +7,11 @@ import Navbar from "./components/Navbar";
 import PageIndicator from "./components/PageIndicator";
 import ScrollNavigator from "./components/ScrollNavigator";
 import AboutUs from "./components/sections/AboutUs";
+import CreativeService from "./components/sections/CreativeServices";
 import HowWeWork from "./components/sections/HowWeWork";
 import MainSec from "./components/sections/MainSec";
 import MarketingServices from "./components/sections/MarketingServices";
+import TechnicalServices from "./components/sections/TechnicalServices";
 
 
 export default function Home() {
@@ -26,13 +28,8 @@ export default function Home() {
       <AboutUs />
       <HowWeWork />
       <MarketingServices />
-      <section id="الخدمات-الإبداعية" className="h-screen flex justify-center items-center bg-accent">
-        <h1 className="text-4xl"></h1>
-      </section>
-      
-      <section id="الخدمات-التقنية" className="h-screen flex justify-center items-center bg-accent">
-        <h1 className="text-4xl"></h1>
-      </section>
+      <CreativeService />
+      <TechnicalServices />
 
       <section id="فريق-العمل" className="h-screen flex justify-center items-center bg-secondary">
         <h1 className="text-4xl">فريق العمل</h1>
