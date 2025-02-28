@@ -20,7 +20,7 @@ const MarketingServices = () => {
         </div>
         
         <div className="flex justify-between items-center gap-6">
-            {marketingCards.map((service) => <Card />)}
+            {marketingCards.map((service) => <Card key={service.id} />)}
 
         </div>
 
