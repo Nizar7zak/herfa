@@ -1,5 +1,6 @@
 import Title from '../Title'
 import Description from '../Description'
+import Form from '../Form'
 
 const answers = [
     "اســـــتفســــارات حـــــــول خــــدمـاتنــــا",
@@ -9,11 +10,10 @@ const answers = [
 
 const ContactUs = () => {
     return (
-        <section id="تواصل-معنا" className="h-screen flex justify-center items-center bg-secondary">
+        <section id="تواصل-معنا" className="h-screen flex justify-center items-center bg-secondary gap-20">
             <div className='w-1/3 flex flex-col justify-center items-start gap-7'>
                 <Title text="تواصل معنا" />
                 <Description text='نحن هنا لتحويل أفكــارك إلى واقـــع ملــمـوس! سـواء كـنت تبحــث عـــن تصميـم إبــداعي يجـــذب الأنـــظار أو مونتــــاج احــــترافي يـــروي قصتـــك بأفضـــل طـــريقة، فريقنا جاهز للعمل معك خطوة بخطوة.' />
-
                 <ul className='flex flex-col justify-center items-start gap-2'>
                     <Description text='كيف يمكننا مساعدتك؟' />
                     { answers.map( ( item, index ) =>
@@ -23,9 +23,10 @@ const ContactUs = () => {
                         </li>
                     ) }
                 </ul>
-
             </div>
-            <div className='w-5/12'>
+            <div className='w-[36%]'>
+
+            <Form />
 
             </div>
         </section>
