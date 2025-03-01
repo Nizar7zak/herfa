@@ -12,12 +12,10 @@ const MemberCard = ({fullName, src, jobDescription} : Props) => {
         <div className="w-[10vw] h-[10vw] rounded-full bg-slate-300 overflow-hidden ml-7">
             <Image alt="team member picture" src={src} />
         </div>
-        <div className="flex flex-col w-[57%] space-y-8">
+        <div className="flex flex-col w-[57%] space-y-6">
             <h1 className="text-active text-2xl font-medium">{fullName}</h1>
-            <h1 className="text-primary text-xl font-light pb-6 border-b-2 border-primary">{jobDescription}</h1>
+            <h1 className="text-primary text-base font-light pb-6 border-b-[0.75px] border-primary">{jobDescription}</h1>
             {/* ICONS HERE */}
-
-
         </div>
 
 

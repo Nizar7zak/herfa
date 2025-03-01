@@ -9,9 +9,9 @@ import Third from '@/public/technical/third.svg'
 const TechnicalServices = () => {
 
     const technicalCards = [
-        { label: "تطوير وبناء المواقع والمتاجر الالكترونية", id: "1", src: First },
-        { label: "تصميم تجربة وواجهة المستخدم UI/UX", id: "2", src: Second },
-        { label: "بناء وتطوير تطبيقات الموبايل", id: "3", src: Third },
+        { label: "تطوير وبناء المواقع والمتاجر الالكترونية", id: "1", src: "/technical/first.mp4" },
+        { label: "تصميم تجربة وواجهة المستخدم UI/UX", id: "2", src: "/technical/second.mp4" },
+        { label: "بناء وتطوير تطبيقات الموبايل", id: "3", src: "/technical/third.mp4" },
 
     ]
 

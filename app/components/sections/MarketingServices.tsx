@@ -1,20 +1,15 @@
 import Card from "../Card"
 import Description from "../Description"
 import Title from "../Title"
-import First from '@/public/marketing/first.svg'
-import Second from '@/public/marketing/second.svg'
-import Third from '@/public/marketing/third.svg'
-import Fourth from '@/public/marketing/fourth.svg'
-import Fifth from '@/public/marketing/fifth.svg'
 
 const MarketingServices = () => {
 
     const marketingCards = [
-        { label: "التسويق عبر المؤثرين", id: "1", src: First },
-        { label: "التسويق عبر محركات الـ SEO", id: "2", src: Second },
-        { label: "كتابة المحتوى", id: "3", src: Third },
-        { label: "إدارة حسابات التواصل الاجتماعي", id: "4", src: Fourth },
-        { label: "إطلاق وإدارة الحملات الإعلانية", id: "5", src: Fifth }
+        { label: "التسويق عبر المؤثرين", id: "1", src: "/marketing/first.mp4" },
+        { label: "التسويق عبر محركات الـ SEO", id: "2", src: "/marketing/second.mp4" },
+        { label: "كتابة المحتوى", id: "3", src: "/marketing/third.mp4" },
+        { label: "إدارة حسابات التواصل الاجتماعي", id: "4", src: "/marketing/fourth.mp4" },
+        { label: "إطلاق وإدارة الحملات الإعلانية", id: "5", src: "/marketing/fifth.mp4" }
     ]
 
     return (

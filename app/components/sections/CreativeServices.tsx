@@ -1,20 +1,16 @@
 import Card from "../Card"
 import Description from "../Description"
 import Title from "../Title"
-import First from '@/public/creative/first.svg'
-import Second from '@/public/creative/second.svg'
-import Third from '@/public/creative/third.svg'
-import Fourth from '@/public/creative/fourth.svg'
-import Fifth from '@/public/creative/fifth.svg'
+
 
 const CreativeService = () => {
 
     const creativeCards = [
-        { label: "تصميم الجرافيك ", id: "1", src: First },
-        { label: "بناء الهوية البصرية", id: "2", src: Second },
-        { label: "الموشن جرافيك", id: "3", src: Third },
-        { label: "مونتاج الفيديو", id: "4", src: Fourth },
-        { label: "التصوير الابداعي", id: "5", src: Fifth }
+        { label: "تصميم الجرافيك ", id: "1", src: "/creative/first.mp4" },
+        { label: "بناء الهوية البصرية", id: "2", src: "/creative/second.mp4" },
+        { label: "الموشن جرافيك", id: "3", src: "/creative/third.mp4" },
+        { label: "مونتاج الفيديو", id: "4", src: "/creative/fourth.mp4" },
+        { label: "التصوير الابداعي", id: "5", src: "/creative/fifth.mp4" }
     ]
 
     return (
