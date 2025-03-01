@@ -1,26 +1,25 @@
 import Image, { StaticImageData } from "next/image";
 
-
 interface Props {
-    fullName: string;
-    jobDescription: string;
-    src: StaticImageData | string;
+  fullName: string;
+  jobDescription: string;
+  src: StaticImageData | string;
+  skillsIcons: StaticImageData[]
 }
 
-const MemberCard = ({fullName, src, jobDescription} : Props) => {
+const MemberCard = ( { fullName, src, jobDescription, skillsIcons }: Props ) => {
   return (
     <div className="flex w-[35%] justify-center items-center ">
-        <div className="w-[10vw] h-[10vw] rounded-full bg-slate-300 overflow-hidden ml-7">
-            <Image alt="team member picture" src={src} />
+      <div className="w-[8vw] h-[8vw] rounded-full bg-slate-300 overflow-hidden ml-7">
+        <Image alt="team member picture" src={ src } />
+      </div>
+      <div className="flex flex-col w-[57%] gap-y-5">
+        <h1 className="text-active text-2xl font-medium">{ fullName }</h1>
+        <h1 className="text-primary text-base font-light pb-3 border-b-[0.75px] border-primary">{ jobDescription }</h1>
+        <div className="flex items-center justify-start gap-2">
+          { skillsIcons.map( ( item, index ) => <Image key={ index } src={ item } alt="skill" /> ) }
         </div>
-        <div className="flex flex-col w-[57%] space-y-6">
-            <h1 className="text-active text-2xl font-medium">{fullName}</h1>
-            <h1 className="text-primary text-base font-light pb-6 border-b-[0.75px] border-primary">{jobDescription}</h1>
-            <div className="flex items-center justify-start space-x-2">
-
-
-            </div>
-        </div>
+      </div>
 
 
     </div>
