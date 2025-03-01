@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import PageIndicator from "./components/PageIndicator";
 import ScrollNavigator from "./components/ScrollNavigator";
 import AboutUs from "./components/sections/AboutUs";
+import ContactUs from "./components/sections/ContactUs";
 import CreativeService from "./components/sections/CreativeServices";
 import HowWeWork from "./components/sections/HowWeWork";
 import MainSec from "./components/sections/MainSec";
@@ -35,10 +36,7 @@ export default function Home() {
       <section id="خبراتنا" className="h-screen flex justify-center items-center bg-secondary">
         <h1 className="text-4xl">خبراتنا </h1>
       </section>
-
-      <section id="تواصل-معنا" className="h-screen flex justify-center items-center bg-secondary">
-        <h1 className="text-4xl">تواصل معنا</h1>
-      </section>
+      <ContactUs />
     </div>
   );
 }
