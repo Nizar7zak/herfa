@@ -1,10 +1,6 @@
 import Card from "../Card"
 import Description from "../Description"
 import Title from "../Title"
-import First from '@/public/technical/first.svg'
-import Second from '@/public/technical/second.svg'
-import Third from '@/public/technical/third.svg'
-
 
 const TechnicalServices = () => {
 
