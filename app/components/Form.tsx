@@ -43,7 +43,7 @@ const Form = () => {
                     <input
                         type="text"
                         placeholder="الاسم"
-                        { ...register( 'name', { required: 'يرجى كتابة الاسم' } ) }
+                        { ...register( 'name' ) }
                         className="text-secondary w-full px-4 py-4 border rounded-md focus:outline-none focus:ring-4 focus:ring-active mb-2"
                         aria-label="الاسم"
                     />
@@ -88,7 +88,7 @@ const Form = () => {
             <button
                 type="submit"
                 disabled={ isSubmitting }
-                className="w-[40%] py-4 bg-active hover:bg-primary  text-primary hover:text-secondary font-bold rounded-md transition-colors duration-300 disabled:opacity-50"
+                className="w-[40%] py-4 bg-active hover:bg-primary  text-primary hover:text-secondaryt font-bold rounded-md transition-colors duration-300 disabled:opacity-50"
             >
                 إرســــــــال
             </button>
