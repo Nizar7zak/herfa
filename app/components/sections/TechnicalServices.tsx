@@ -19,7 +19,7 @@ const TechnicalServices = () => {
             </div>
 
             <div className="flex justify-between items-center gap-6">
-                { technicalCards.map( ( service ) => <Card key={ service.id } text={ service.label } src={ service.src } /> ) }
+                { technicalCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcVideo={ src } /> ) }
 
             </div>
 

@@ -21,7 +21,7 @@ const CreativeService = () => {
             </div>
 
             <div className="flex justify-between items-center gap-6">
-                { creativeCards.map( ( service ) => <Card key={ service.id } text={ service.label } src={ service.src } /> ) }
+                { creativeCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcVideo={ src } /> ) }
 
             </div>
 
