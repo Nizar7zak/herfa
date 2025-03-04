@@ -8,7 +8,7 @@ interface Props {
 
 const Card = ( { text, srcVideo, srcImage }: Props ) => {
     return (
-        <div className="w-[168px] h-[240px] bg-primary rounded-lg flex flex-col justify-center items-center gap-4 py-8">
+        <div className="w-[160px] h-[240px] bg-primary rounded-lg flex flex-col justify-center items-center gap-8 py-8">
             { srcVideo ?
                 <video
                     autoPlay
@@ -20,7 +20,7 @@ const Card = ( { text, srcVideo, srcImage }: Props ) => {
                     <source src={ srcVideo } type="video/mp4" />
                     Your browser does not support the video tag.
                 </video> :
-                srcImage && <Image alt="icon How We Work" src={ srcImage } />
+                srcImage &&  <Image alt="icon How We Work" src={ srcImage } />
             }
 
             <h1 className="text-base text-center text-secondary w-[85%] flex-1">{ text }</h1>
