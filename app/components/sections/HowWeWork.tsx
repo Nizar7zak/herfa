@@ -61,7 +61,7 @@ const HowWeWork = () => {
           layout
           transition={{ type: "spring", stiffness: 200, damping: 50 }}
         >
-          {sliderContent.map(({ content, src }, index) => (
+          {sliderContent.map(({ content, src }) => (
             <motion.div
               key={content}
               layout

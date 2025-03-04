@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from 'zod';
 import ErrorMessage from "@/app/components/ErrorMessage"
+import axios from "axios";
 
 type AuthData = z.infer<typeof authSchema>
 
@@ -25,9 +26,16 @@ const Form = () => {
         try {
             console.log( email, name, message, phone )
 
-        } catch ( error ) {
-            setIsSubmitting( false );
-            setError( "Something Wrong happened" );
+        }catch (error) {
+            if (axios.isAxiosError(error)) {
+                console.error('Axios Error:', error.response?.data || error.message);
+                setError(error.response?.data?.message || 'Something went wrong');
+            } else {
+                console.error('Unexpected Error:', error);
+                setError('An unexpected error occurred');
+            }
+        } finally {
+            setIsSubmitting(false);
         }
     } )
 
