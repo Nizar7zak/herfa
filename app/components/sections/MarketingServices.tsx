@@ -13,13 +13,13 @@ const MarketingServices = () => {
     ]
 
     return (
-        <section id="الخدمات-التسويقية" className="h-screen flex flex-col justify-center items-center bg-accent gap-32">
+        <section id="الخدمات-التسويقية" className="h-screen flex flex-col justify-center items-center bg-accent gap-16">
             <div className="space-y-4 w-[35%] flex flex-col justify-center items-center">
                 <Title text="الخدمات التسويقية" />
                 <Description text={ `أي نشاط تجاري" منتجات أو خدمات" تحتاج إلى تنفيذ استراتيجيات تسويقية وترويجية استثنائية "خارج الصندوق"، لذلك نقدم لكم مجموعة متكاملة من الخدمات التسويقية تشمل:` } />
             </div>
 
-            <div className="flex justify-between items-center gap-6">
+            <div className="flex justify-between items-center gap-12">
                 { marketingCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcVideo={ src } /> ) }
 
             </div>

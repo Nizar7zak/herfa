@@ -14,13 +14,13 @@ const CreativeService = () => {
     ]
 
     return (
-        <section id="الخدمات-الإبداعية" className="h-screen flex flex-col justify-center items-center bg-accent gap-32">
+        <section id="الخدمات-الإبداعية" className="h-screen flex flex-col justify-center items-center bg-accent gap-16">
             <div className="space-y-4 w-[35%] flex flex-col justify-center items-center">
                 <Title text="الخدمـات الإبداعيـــة" />
                 <Description text={ `في ظل انتشار المحتوى المرئي بشكل واسع على الانترنت، والنتائج التي تحققها على الجمهور، لذلك نقدم خدماتنا الإبداعية التالية:` } />
             </div>
 
-            <div className="flex justify-between items-center gap-6">
+            <div className="flex justify-between items-center gap-12">
                 { creativeCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcVideo={ src } /> ) }
 
             </div>

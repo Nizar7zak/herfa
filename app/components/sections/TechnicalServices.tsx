@@ -12,13 +12,13 @@ const TechnicalServices = () => {
     ]
 
     return (
-        <section id="الخدمات-التقنية" className="h-screen flex flex-col justify-center items-center bg-accent gap-32">
+        <section id="الخدمات-التقنية" className="h-screen flex flex-col justify-center items-center bg-accent gap-16">
             <div className="space-y-4 w-[35%] flex flex-col justify-center items-center">
                 <Title text="الخــدمــات التقنيــــة" />
                 <Description text={ `لأن كل نشاط تجاري غير موجود على الانترنت، فهو ذاهب للتلاشي لا محالة... نقدم خدماتنا التقنية التالية:` } />
             </div>
 
-            <div className="flex justify-between items-center gap-6">
+            <div className="flex justify-between items-center gap-12">
                 { technicalCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcVideo={ src } /> ) }
 
             </div>
