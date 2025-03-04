@@ -1,7 +1,6 @@
 "use client"
 import { authSchema } from "@/app/validationSchema";
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from 'zod';
@@ -12,9 +11,7 @@ type AuthData = z.infer<typeof authSchema>
 
 const Form = () => {
     const [ error, setError ] = useState( '' )
-    const [ mouseOver, setMouseOver ] = useState( false )
     const [ isSubmitting, setIsSubmitting ] = useState( false )
-    const router = useRouter()
 
     const {
         register,
@@ -91,6 +88,7 @@ const Form = () => {
             >
                 إرســــــــال
             </button>
+            { error && <ErrorMessage>{ error }</ErrorMessage> }
 
         </form>
     );
