@@ -12,6 +12,7 @@ import CreativeService from "./components/sections/CreativeServices";
 import HowWeWork from "./components/sections/HowWeWork";
 import MainSec from "./components/sections/MainSec";
 import MarketingServices from "./components/sections/MarketingServices";
+import OurExperince from "./components/sections/OurExperince";
 import TeamMembers from "./components/sections/TeamMembers";
 import TechnicalServices from "./components/sections/TechnicalServices";
 
@@ -33,9 +34,7 @@ export default function Home() {
       <CreativeService />
       <TechnicalServices />
       <TeamMembers />
-      <section id="خبراتنا" className="h-screen flex justify-center items-center bg-secondary">
-        <h1 className="text-4xl">خبراتنا </h1>
-      </section>
+      <OurExperince />
       <ContactUs />
     </div>
   );
