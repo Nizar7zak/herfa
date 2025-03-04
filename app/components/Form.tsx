@@ -88,7 +88,7 @@ const Form = () => {
             <button
                 type="submit"
                 disabled={ isSubmitting }
-                className="w-[40%] py-4 bg-active hover:bg-primary  text-primary hover:text-secondaryt font-bold rounded-md transition-colors duration-300 disabled:opacity-50"
+                className="w-[40%] py-4 bg-active hover:bg-primary  text-primary hover:text-secondary hover:text-secondaryt font-bold rounded-md transition-colors duration-300 disabled:opacity-50"
             >
                 إرســــــــال
             </button>
