@@ -1,5 +1,9 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image, { StaticImageData } from "next/image";
 import Description from "../Description";
 import Title from "../Title";
+import Card from "../Card";
 
 import Fifth from '@/public/howwework/fifth.svg';
 import First from '@/public/howwework/first.svg';
@@ -9,10 +13,6 @@ import Second from '@/public/howwework/second.svg';
 import Seventh from '@/public/howwework/seventh.svg';
 import Sixth from '@/public/howwework/sixth.svg';
 import Third from '@/public/howwework/third.svg';
-import Image, { StaticImageData } from "next/image";
-import Card from "../Card";
-import { useState } from "react";
-import { motion } from "framer-motion";
 
 interface SliderItem {
   content: string;
@@ -59,13 +59,15 @@ const HowWeWork = () => {
         <motion.div 
           className="flex justify-between items-center gap-12 -mt-6"
           layout
-          transition={{ type: "spring", stiffness: 300, damping: 100 }}
+          transition={{ type: "spring", stiffness: 200, damping: 50 }}
         >
-          {sliderContent.map(({ content, src }) => (
+          {sliderContent.map(({ content, src }, index) => (
             <motion.div
               key={content}
               layout
-              transition={{ type: "spring", stiffness: 300, damping: 100 }}
+              initial={{ opacity: 1 }}
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ duration: 1 }}
             >
               <Card text={content} srcImage={src} />
             </motion.div>
