@@ -13,8 +13,8 @@ const OurExperince = () => {
     const [selectedModel, setSelectedModel] = useState<typeof models[number] | null>(null);
 
     return (
-        <section id="خبراتنا" className="h-screen flex justify-center items-center bg-secondary gap-10">
-            <div className="w-[30vw] h-[60vh] bg-slate-200 rounded-xl flex justify-center items-center p-5">
+        <section id="خبراتنا" className="h-screen flex justify-center items-center bg-secondary gap-8 xl:gap-10">
+            <div className="w-[30vw] h-[48vh] xl:h-[54vh] bg-slate-200 rounded-xl flex justify-center items-center p-5">
                 {hoveredModel ? (
                     <p className="text-lg font-semibold">{hoveredModel.content}</p>
                 ) : (
@@ -22,11 +22,11 @@ const OurExperince = () => {
                 )}
             </div>
 
-            <div className="flex justify-center items-center w-[43%] flex-col flex-wrap h-[60vh] gap-12">
+            <div className="flex justify-center items-center w-[40%] flex-col flex-wrap h-[50vh] xl:h-[57vh] gap-8 xl:gap-12">
                 {models.map((model) => (
                     <div
                         key={model.id}
-                        className="w-[20vw] h-[27vh] bg-slate-200 rounded-lg transition duration-300 hover:bg-slate-300 cursor-pointer"
+                        className="w-[20vw] h-[22vh] xl:h-[24vh] bg-slate-200 rounded-lg transition duration-300 hover:bg-slate-300 cursor-pointer"
                         onMouseEnter={() => setHoveredModel(model)}
                         onMouseLeave={() => setHoveredModel(null)}
                         onClick={() => setSelectedModel(model)}

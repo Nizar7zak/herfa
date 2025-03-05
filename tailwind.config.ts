@@ -7,6 +7,14 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: '480px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         background: "var(--background)",
@@ -23,7 +31,7 @@ export default {
       keyframes: {
         floatRotate: {
           "0%": { transform: "translateY(0px) rotate(0deg)" },
-          "50%": { transform: "translateY(3px) rotate(90deg)" }, 
+          "50%": { transform: "translateY(3px) rotate(90deg)" },
           "100%": { transform: "translateY(0px) rotate(0deg)" },
         },
       },

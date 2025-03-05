@@ -61,7 +61,7 @@ const TeamMembers = () => {
         <section id="فريق-العمل" className="h-screen bg-secondary flex flex-col justify-center items-center gap-16 ">
             <Title text="فريـــق العمـــل" />
 
-            <div className="flex justify-center items-center gap-x-8 gap-y-16 flex-wrap ">
+            <div className="flex justify-center items-center gap-x-8 gap-y-12 xl:gap-x-8 xl:gap-y-16 flex-wrap ">
                 { members.map( (
                     { src, fullName, skillsIcons, jobDescription }, index
                     ) => <MemberCard

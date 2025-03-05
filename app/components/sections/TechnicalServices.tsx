@@ -18,7 +18,7 @@ const TechnicalServices = () => {
                 <Description text={ `لأن كل نشاط تجاري غير موجود على الانترنت، فهو ذاهب للتلاشي لا محالة... نقدم خدماتنا التقنية التالية:` } />
             </div>
 
-            <div className="flex justify-between items-center gap-12">
+            <div className="flex justify-between items-center gap-6 2xl:gap-10">
                 { technicalCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcVideo={ src } /> ) }
 
             </div>

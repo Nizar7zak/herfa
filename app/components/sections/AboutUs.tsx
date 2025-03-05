@@ -5,9 +5,9 @@ import Title from '../Title'
 
 const AboutUs = () => {
   return (
-    <section id="من-نحن" className="h-screen flex justify-center items-center bg-secondary">
+    <section id="من-نحن" className="h-screen flex justify-center items-center bg-secondary gap-24">
 
-    <div className="w-[40%] flex justify-center items-center">
+    <div className="w-[25%] 2xl:w-[28%] flex justify-center items-center">
       <Image src={ AboutUsPic } alt="من نحن" />
     </div>
     <div className="flex flex-col space-y-8 w-[35%] ">

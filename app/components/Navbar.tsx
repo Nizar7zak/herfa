@@ -38,12 +38,12 @@ const Navbar = () => {
                 <Image src={ Animation } alt="Logo-herfa" className="transition-all duration-500" />
             </div>
 
-            <ul className="flex gap-6">
+            <ul className="flex gap-4 2xl:gap-6">
                 { sections.map( ( section ) => (
                     <li key={ section.id }>
                         <button
                             onClick={ () => handleClick( section.id ) }
-                            className={ `transition-all ${activeSection === section.id ? "text-active font-bold" : textColor
+                            className={ `transition-all text-sm 2xl:text-lg ${activeSection === section.id ? "text-active font-bold" : textColor
                                 }` }
                         >
                             { section.label }

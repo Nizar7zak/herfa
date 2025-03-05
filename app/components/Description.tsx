@@ -11,7 +11,7 @@ const Description = ( { text }: Props ) => {
     const textJustify = isSpecialSection ? "text-center" : "text-justify";
     
     return (
-        <h1 className={`${textColor} font-normal ${textJustify} text-xl`}>{ text }</h1>
+        <h1 className={`${textColor} font-normal xl:font-medium ${textJustify} md:text-[0.8rem] xl:text-[1rem] 2xl:text-[1.4rem]`}>{ text }</h1>
     )
 }
 

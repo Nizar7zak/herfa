@@ -10,17 +10,17 @@ import Vision2 from "@/public/vision2.svg";
 
 const Logos = () => {
     const { isHome, activeSection } = useSectionStore();
-    const isActive = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection)
+    const isActive = [ "الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية" ].includes( activeSection )
 
     const assets = {
-      logo: isActive ? Logo2 : Logo,
-      line: isActive ? Line2 : Line,
-      vision: isActive ? Vision2 : Vision,
+        logo: isActive ? Logo2 : Logo,
+        line: isActive ? Line2 : Line,
+        vision: isActive ? Vision2 : Vision,
     };
 
     return (
         <div
-            className={ `flex flex-col items-center space-y-4
+            className={ `flex flex-col items-center space-y-2 xl:space-y-4
                     fixed transition-all duration-500 ${isHome
                     ? "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[4]"
                     : "top-[3.125rem] left-[5.8rem] scale-100"
@@ -46,14 +46,16 @@ const Logos = () => {
                 <Image
                     src={ assets.logo }
                     alt="Logo-herfa"
-                    width={ 50 }
-                    height={ 50 }
-                    className="transition-all duration-500"
+                    width={ 25 }
+                    height={ 25 }
+                    className="md:w-[50px] md:h-[50px] lg:w-[70px] lg:h-[70px] xl:w-[85px] xl:h-[85px] 2xl:h-[100px] 2xl:w-[100px]
+                     transition-all duration-500"
                 />
+
 
             </div>
             <h1
-                className={ `text-[10px] font-extralight text-center transition-all duration-500 ${isHome ? "opacity-100 scale-100" : "opacity-0 scale-50"
+                className={ `text-[7px] xl:text-[8px] 2xl:text-[10px] font-extralight text-center transition-all duration-500 ${isHome ? "opacity-100 scale-100" : "opacity-0 scale-50"
                     }` }
             >
                 تـخـطـى حـدود <span className="font-bold mr-[2px]">الإبـداع</span>

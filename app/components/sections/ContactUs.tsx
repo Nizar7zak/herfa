@@ -10,7 +10,7 @@ const answers = [
 
 const ContactUs = () => {
     return (
-        <section id="تواصل-معنا" className="h-screen flex justify-center items-center bg-secondary gap-20">
+        <section id="تواصل-معنا" className="h-screen flex justify-center items-center bg-secondary gap-6 xl:gap-12 2xl:gap-20">
             <div className='w-1/3 flex flex-col justify-center items-start gap-7'>
                 <Title text="تواصل معنا" />
                 <Description text='نحن هنا لتحويل أفكــارك إلى واقـــع ملــمـوس! سـواء كـنت تبحــث عـــن تصميـم إبــداعي يجـــذب الأنـــظار أو مونتــــاج احــــترافي يـــروي قصتـــك بأفضـــل طـــريقة، فريقنا جاهز للعمل معك خطوة بخطوة.' />
