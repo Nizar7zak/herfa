@@ -26,9 +26,9 @@ const Logos = () => {
                     : "top-[3.125rem] left-[5.8rem] scale-100"
                 }` }
         >
-            <div className="flex gap-4 justify-between items-center">
+            <div className="flex justify-between items-center">
                 { !isHome && (
-                    <div className="flex gap-4 justify-between items-center">
+                    <div className="flex justify-between items-center">
                         <Image
                             src={ assets.vision }
                             alt="Vision-2030"
@@ -37,7 +37,7 @@ const Logos = () => {
                         <Image
                             src={ assets.line }
                             alt="line"
-                            className="transition-all duration-500"
+                            className="transition-all duration-500 mr-4 2xl:mr-8"
                         />
 
                     </div>

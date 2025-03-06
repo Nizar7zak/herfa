@@ -8,22 +8,22 @@ interface Props {
 
 const Card = ( { text, srcVideo, srcImage }: Props ) => {
     return (
-        <div className="w-[160px] h-[240px] bg-primary rounded-lg flex flex-col justify-center items-center gap-8 py-8">
+        <div className="w-[13vw] h-[25vh] xl:h-[29vh] 2xl:w-[11vw] 2xl:h-[32vh] bg-primary rounded-lg flex flex-col justify-center items-center gap-5 xl:gap-8 2xl:gap-6 py-8">
             { srcVideo ?
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-[75%] h-auto"
+                    className=" w-[65%] xl:w-[75%] 2xl:w-[70%] h-auto"
                 >
                     <source src={ srcVideo } type="video/mp4" />
                     Your browser does not support the video tag.
                 </video> :
-                srcImage &&  <Image alt="icon How We Work" src={ srcImage } />
+                srcImage && <Image alt="icon How We Work" src={ srcImage } className=" w-[65%] xl:w-[75%] 2xl:w-[70%] h-auto" />
             }
 
-            <h1 className="text-base text-center text-secondary w-[85%] flex-1">{ text }</h1>
+            <h1 className="text-sm xl:text-base 2xl:text-lg text-center text-secondary w-[90%]  flex-1">{ text }</h1>
         </div>
     )
 }

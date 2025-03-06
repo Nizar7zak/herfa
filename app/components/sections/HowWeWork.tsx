@@ -35,12 +35,12 @@ const HowWeWork = () => {
   const handleImageClick = () => {
     setSliderContent((prev) => {
       const [first, ...rest] = prev;
-      return [...rest, first]; // Moves the first item to the end
+      return [...rest, first]; 
     });
   };
 
   return (
-    <section id="آلية-عملنا" className="h-screen w-[135vw] flex justify-center items-center bg-secondary gap-32">
+    <section id="آلية-عملنا" className="h-screen md:w-[182vw] xl:w-[178vw] 2xl:w-[155vw] flex justify-center items-center bg-secondary gap-10 xl:gap-16 2xl:gap-32">
       <div>
         <div className="w-full flex flex-col space-y-4">
           <Title text="آليــة عملنـــا" />
@@ -51,13 +51,13 @@ const HowWeWork = () => {
       <Image 
         src={Right} 
         alt="right" 
-        className="cursor-pointer transition-transform duration-300 hover:scale-110"
+        className="cursor-pointer transition-transform duration-300 hover:scale-115"
         onClick={handleImageClick}
       />
 
-      <div className="flex flex-col p-2 border-2 border-active rounded-lg">
+      <div className="flex flex-col p-3 border-2 border-active rounded-lg">
         <motion.div 
-          className="flex justify-between items-center gap-12 -mt-6"
+          className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-12 -mt-6"
           layout
           transition={{ type: "spring", stiffness: 200, damping: 50 }}
         >
