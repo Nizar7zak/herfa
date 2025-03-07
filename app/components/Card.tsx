@@ -12,8 +12,8 @@ const Card = ( { text, srcImage, isService }: Props ) => {
 
     return (
         <div className={ `${bgColor} 
-        w-[13vw] h-[25vh] xl:h-[29vh] 2xl:w-[11vw] 2xl:h-[32vh] 3xl:w-[12vw] 3xl:h-[34vh] rounded-lg flex flex-col justify-center items-center gap-6 xl:gap-8 2xl:gap-10 py-14 `}>
-            <Image alt="icon How We Work" src={ srcImage } width={ 30 } height={ 30 } className=" w-[70%] xl:w-[65%] 2xl:w-[50%] h-auto" unoptimized />
+        w-[13vw] h-[25vh] xl:h-[29vh] 2xl:w-[11vw] 2xl:h-[32vh]  rounded-lg flex flex-col justify-center items-center gap-6 xl:gap-8 2xl:gap-10 py-14 `}>
+            <Image alt="icon How We Work" src={ srcImage } width={ 30 } height={ 30 } className=" w-[75%] xl:w-[70%] 2xl:w-[65%] h-auto" unoptimized />
             <h1 className={`text-sm xl:text-base  text-center ${color}  w-[90%]  flex-1`}>{ text }</h1>
         </div>
     )
