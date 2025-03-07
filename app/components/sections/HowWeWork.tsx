@@ -40,7 +40,7 @@ const HowWeWork = () => {
   };
 
   return (
-    <section id="آلية-عملنا" className="h-screen md:w-[182vw] xl:w-[178vw] 2xl:w-[155vw] flex justify-center items-center gap-10 xl:gap-16 2xl:gap-32">
+    <section id="آلية-عملنا" className="h-screen md:w-[182vw] xl:w-[178vw] 2xl:w-[168vw] flex justify-center items-center gap-10 xl:gap-16 2xl:gap-24">
       <div>
         <div className="w-full flex flex-col space-y-4">
           <Title text="آليــة عملنـــا" />
@@ -57,7 +57,7 @@ const HowWeWork = () => {
 
       <div className="flex flex-col p-3 border-2 border-active rounded-lg">
         <motion.div 
-          className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-12 -mt-6"
+          className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-10 -mt-6"
           layout
           transition={{ type: "spring", stiffness: 200, damping: 50 }}
         >
