@@ -55,7 +55,7 @@ const HowWeWork = () => {
         onClick={ handleImageClick }
       />
 
-      <div className="flex flex-col p-3 border-2 border-active rounded-lg">
+      <div className="flex flex-col p-3 border-4 border-active rounded-lg">
         <motion.div
           className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-10 -mt-6"
           layout
