@@ -20,7 +20,7 @@ const CreativeService = () => {
                 <Description text={ `في ظل انتشار المحتوى المرئي بشكل واسع على الانترنت، والنتائج التي تحققها على الجمهور، لذلك نقدم خدماتنا الإبداعية التالية:` } />
             </div>
 
-            <div className="flex justify-between items-center  gap-4 xl:gap-6 2xl:gap-10 border-2 border-active rounded-lg ">
+            <div className="flex justify-between items-center  gap-4 xl:gap-6 2xl:gap-10 border-4 border-active rounded-lg ">
                 { creativeCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcImage={ src } isService/> ) }
 
             </div>

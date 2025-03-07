@@ -19,7 +19,7 @@ const MarketingServices = () => {
                 <Description text={ `أي نشاط تجاري" منتجات أو خدمات" تحتاج إلى تنفيذ استراتيجيات تسويقية وترويجية استثنائية "خارج الصندوق"، لذلك نقدم لكم مجموعة متكاملة من الخدمات التسويقية تشمل:` } />
             </div>
 
-            <div className="flex justify-between items-center  gap-4 xl:gap-6 2xl:gap-10 border-2 border-active rounded-lg ">
+            <div className="flex justify-between items-center  gap-4 xl:gap-6 2xl:gap-10 border-4 border-active rounded-lg ">
                 { marketingCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcImage={ src } isService /> ) }
 
             </div>
