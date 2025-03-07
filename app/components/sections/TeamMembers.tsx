@@ -51,10 +51,7 @@ const TeamMembers = () => {
                 Js, 
                 Ts, 
                 Sql, 
-                Git,
                 Github,
-                Redux,
-                Fifth
             ] 
         },
         { 
