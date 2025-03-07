@@ -5,9 +5,9 @@ import Title from "../Title"
 const TechnicalServices = () => {
 
     const technicalCards = [
-        { label: "تطوير وبناء المواقع والمتاجر الالكترونية", id: "1", src: "/technical/first.mp4" },
-        { label: "تصميم تجربة وواجهة المستخدم UI/UX", id: "2", src: "/technical/second.mp4" },
-        { label: "بناء وتطوير تطبيقات الموبايل", id: "3", src: "/technical/third.mp4" },
+        { label: "تطوير وبناء المواقع والمتاجر الالكترونية", id: "1", src: "/technical/first.gif" },
+        { label: "تصميم تجربة وواجهة المستخدم UI/UX", id: "2", src: "/technical/second.gif" },
+        { label: "بناء وتطوير تطبيقات الموبايل", id: "3", src: "/technical/third.gif" },
 
     ]
 
@@ -19,7 +19,7 @@ const TechnicalServices = () => {
             </div>
 
             <div className="flex justify-between items-center  gap-4 xl:gap-6 2xl:gap-10">
-                { technicalCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcVideo={ src } /> ) }
+                { technicalCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcImage={ src } /> ) }
 
             </div>
 

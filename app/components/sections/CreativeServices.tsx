@@ -6,11 +6,11 @@ import Title from "../Title"
 const CreativeService = () => {
 
     const creativeCards = [
-        { label: "تصميم الجرافيك ", id: "1", src: "/creative/third.gif" },
-        { label: "بناء الهوية البصرية", id: "2", src: "/creative/third.gif" },
+        { label: "تصميم الجرافيك ", id: "1", src: "/creative/first.gif" },
+        { label: "بناء الهوية البصرية", id: "2", src: "/creative/second.gif" },
         { label: "الموشن جرافيك", id: "3", src: "/creative/third.gif" },
-        { label: "مونتاج الفيديو", id: "4", src: "/creative/third.gif" },
-        { label: "التصوير الابداعي", id: "5", src: "/creative/third.gif" }
+        { label: "مونتاج الفيديو", id: "4", src: "/creative/fourth.gif" },
+        { label: "التصوير الابداعي", id: "5", src: "/creative/fifth.gif" }
     ]
 
     return (

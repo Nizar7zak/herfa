@@ -5,11 +5,11 @@ import Title from "../Title"
 const MarketingServices = () => {
 
     const marketingCards = [
-        { label: "التسويق عبر المؤثرين", id: "1", src: "/marketing/first.mp4" },
-        { label: "التسويق عبر محركات الـ SEO", id: "2", src: "/marketing/second.mp4" },
-        { label: "كتابة المحتوى", id: "3", src: "/marketing/third.mp4" },
-        { label: "إدارة حسابات التواصل الاجتماعي", id: "4", src: "/marketing/fourth.mp4" },
-        { label: "إطلاق وإدارة الحملات الإعلانية", id: "5", src: "/marketing/fifth.mp4" }
+        { label: "التسويق عبر المؤثرين", id: "1", src: "/marketing/first.gif" },
+        { label: "التسويق عبر محركات الـ SEO", id: "2", src: "/marketing/second.gif" },
+        { label: "كتابة المحتوى", id: "3", src: "/marketing/third.gif" },
+        { label: "إدارة حسابات التواصل الاجتماعي", id: "4", src: "/marketing/fourth.gif" },
+        { label: "إطلاق وإدارة الحملات الإعلانية", id: "5", src: "/marketing/fifth.gif" }
     ]
 
     return (
@@ -20,7 +20,7 @@ const MarketingServices = () => {
             </div>
 
             <div className="flex justify-between items-center  gap-4 xl:gap-6 2xl:gap-10">
-                { marketingCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcVideo={ src } /> ) }
+                { marketingCards.map( ( { id, label, src } ) => <Card key={ id } text={ label } srcImage={ src } /> ) }
 
             </div>
 
