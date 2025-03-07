@@ -10,7 +10,7 @@ const Description = ( { text }: Props ) => {
     const textJustify = isSpecialSection ? "text-center" : "text-justify";
     
     return (
-        <h1 className={`text-white font-normal ${textJustify} md:text-[0.8rem] xl:text-[1rem]  `}>{ text }</h1>
+        <h1 className={`text-white font-normal ${textJustify} md:text-[0.8rem] xl:text-base md:leading-5 lg:leading-10 xl:leading-[2.1rem] `}>{ text }</h1>
     )
 }
 
