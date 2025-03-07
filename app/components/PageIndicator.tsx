@@ -20,9 +20,7 @@ const sections = [
 ];
 const PageIndicator = () => {
     const { activeSection, setActiveSection } = useSectionStore();
-    const textColor = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection)
-    ? "text-secondary"
-    : "text-white";
+
 
     return (
         <div className="fixed right-[5.93rem] top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
@@ -31,7 +29,7 @@ const PageIndicator = () => {
                     <a
                         onClick={() => setActiveSection(section.id)}
                         href={`#${section.id}`}
-                        className={`transition-all ${activeSection === section.id ? "text-active font-bold text-xl" : textColor}`}
+                        className={`transition-all ${activeSection === section.id ? "text-active font-bold text-xl" : "text-primary"}`}
                     >
                         {section.label}
                     </a>

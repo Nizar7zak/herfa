@@ -13,7 +13,7 @@ const MarketingServices = () => {
     ]
 
     return (
-        <section id="الخدمات-التسويقية" className="h-screen flex flex-col justify-center items-center bg-accent gap-10 xl:gap-14 2xl:gap-16">
+        <section id="الخدمات-التسويقية" className="h-screen flex flex-col justify-center items-center  gap-10 xl:gap-14 2xl:gap-16">
             <div className="space-y-4 w-[42%] flex flex-col justify-center items-center">
                 <Title text="الخدمات التسويقية" />
                 <Description text={ `أي نشاط تجاري" منتجات أو خدمات" تحتاج إلى تنفيذ استراتيجيات تسويقية وترويجية استثنائية "خارج الصندوق"، لذلك نقدم لكم مجموعة متكاملة من الخدمات التسويقية تشمل:` } />

@@ -2,21 +2,11 @@ import { useSectionStore } from "@/lib/store";
 import Image from "next/image";
 
 import Line from "@/public/line.svg";
-import Line2 from "@/public/line2.svg";
 import Logo from '@/public/logo-herfa.svg';
-import Logo2 from '@/public/logo-herfa2.svg';
 import Vision from "@/public/vision.svg";
-import Vision2 from "@/public/vision2.svg";
 
 const Logos = () => {
-    const { isHome, activeSection } = useSectionStore();
-    const isActive = [ "الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية" ].includes( activeSection )
-
-    const assets = {
-        logo: isActive ? Logo2 : Logo,
-        line: isActive ? Line2 : Line,
-        vision: isActive ? Vision2 : Vision,
-    };
+    const { isHome } = useSectionStore();
 
     return (
         <div
@@ -30,12 +20,12 @@ const Logos = () => {
                 { !isHome && (
                     <div className="flex justify-between items-center">
                         <Image
-                            src={ assets.vision }
+                            src={ Vision }
                             alt="Vision-2030"
                             className="transition-all duration-500"
                         />
                         <Image
-                            src={ assets.line }
+                            src={ Line }
                             alt="line"
                             className="transition-all duration-500 mr-4 2xl:mr-8"
                         />
@@ -44,7 +34,7 @@ const Logos = () => {
                 ) }
 
                 <Image
-                    src={ assets.logo }
+                    src={ Logo }
                     alt="Logo-herfa"
                     width={ 25 }
                     height={ 25 }

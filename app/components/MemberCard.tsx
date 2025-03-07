@@ -17,7 +17,7 @@ const MemberCard = ( { fullName, src, jobDescription, skillsIcons }: Props ) => 
         <h1 className="text-active text-base xl:text-xl 2xl:text-2xl font-medium">{ fullName }</h1>
         <h1 className="text-primary text-sm xl:text-base font-light pb-3 border-b-[0.75px] border-primary">{ jobDescription }</h1>
         <div className="flex items-center justify-start gap-2">
-          { skillsIcons.map( ( item, index ) => <Image key={ index } src={ item } alt="skill" /> ) }
+          { skillsIcons.map( ( item, index ) => <Image key={ index } src={ item } alt="skill" width={35}/> ) }
         </div>
       </div>
 

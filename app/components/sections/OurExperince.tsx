@@ -13,7 +13,7 @@ const OurExperince = () => {
     const [selectedModel, setSelectedModel] = useState<typeof models[number] | null>(null);
 
     return (
-        <section id="خبراتنا" className="h-screen flex justify-center items-center bg-secondary gap-8 xl:gap-10">
+        <section id="خبراتنا" className="h-screen flex justify-center items-center  gap-8 xl:gap-10">
             <div className="w-[30vw] h-[48vh] xl:h-[54vh] bg-slate-200 rounded-xl flex justify-center items-center p-5">
                 {hoveredModel ? (
                     <p className="text-lg font-semibold">{hoveredModel.content}</p>

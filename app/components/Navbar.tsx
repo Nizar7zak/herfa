@@ -43,7 +43,7 @@ const Navbar = () => {
                     <li key={ section.id }>
                         <button
                             onClick={ () => handleClick( section.id ) }
-                            className={ `transition-all text-sm 2xl:text-lg ${activeSection === section.id ? "text-active font-bold" : textColor
+                            className={ `transition-all text-sm 2xl:text-lg ${activeSection === section.id ? "text-active font-bold" : "text-white"
                                 }` }
                         >
                             { section.label }

@@ -2,13 +2,8 @@ import { FaChevronDown } from 'react-icons/fa'
 import SocialIcons from './SocialIcons'
 import Image from 'next/image'
 import Whatsapp from '@/public/whatsapp.svg'
-import { useSectionStore } from '@/lib/store'
 
 const Icons = () => {
-    const { activeSection } = useSectionStore();
-    const textColor = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection)
-    ? "text-secondary"
-    : "text-white";
 
 
     return (
@@ -18,7 +13,7 @@ const Icons = () => {
             </div>
 
 
-            <FaChevronDown size={ 24 } className={ textColor } />
+            <FaChevronDown size={ 24 } className= "text-white" />
 
             <div className="flex-1 flex justify-end">
                 <SocialIcons />

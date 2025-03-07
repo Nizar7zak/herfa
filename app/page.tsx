@@ -19,7 +19,7 @@ import TechnicalServices from "./components/sections/TechnicalServices";
 
 export default function Home() {
   return (
-    <div className="relative bg-gray-900 text-white">
+    <div className="relative ">
       <Navbar />
       <PageIndicator />
       <ScrollNavigator />

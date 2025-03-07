@@ -1,9 +1,7 @@
 "use client";
-import { useSectionStore } from "@/lib/store";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaBehance, FaXTwitter, FaTiktok } from "react-icons/fa6";
 
 const SocialIcons = () => {
-  const { activeSection } = useSectionStore();
   const icons = [
     { id: "instagram", icon: <FaInstagram />, link: "#" },
     { id: "facebook", icon: <FaFacebookF />, link: "#" },
@@ -13,8 +11,6 @@ const SocialIcons = () => {
     { id: "tiktok", icon: <FaTiktok />, link: "#" },
   ];
 
-  const color = [ "الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية" ].includes( activeSection ) ? "text-white bg-secondary"
-    : "text-secondary bg-white"
   return (
     <div className="flex gap-2 justify-center">
       { icons.map( ( { id, icon, link } ) => (
@@ -23,7 +19,7 @@ const SocialIcons = () => {
           href={ link }
           target="_blank"
           rel="noopener noreferrer"
-          className={ `w-[30px] h-[30px] flex items-center justify-center rounded-full transition-all duration-300 hover:bg-active ${color}` }
+          className={ `w-[30px] h-[30px] flex items-center justify-center rounded-full transition-all duration-300 hover:bg-active text-secondary bg-white` }
         >
           <span className="text-xl">{ icon }</span>
         </a>

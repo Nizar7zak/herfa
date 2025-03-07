@@ -24,7 +24,7 @@ const FloatingArt = () => {
         } }
       >
         <Image alt="زخرفة 1" src={ isSpecial ? ArtSide2 : ArtSide } />
-        <Image alt="زخرفة 2" src={ isSpecial ? ArtSide2 : ArtSide } className={ isSpecial ? "" : "-my-6" } />
+        <Image alt="زخرفة 2" src={ isSpecial ? ArtSide2 : ArtSide } className={ isSpecial ? "" : "-my-3" } />
       </motion.div>
     </div>
   );

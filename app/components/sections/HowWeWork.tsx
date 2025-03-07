@@ -40,7 +40,7 @@ const HowWeWork = () => {
   };
 
   return (
-    <section id="آلية-عملنا" className="h-screen md:w-[182vw] xl:w-[178vw] 2xl:w-[155vw] flex justify-center items-center bg-secondary gap-10 xl:gap-16 2xl:gap-32">
+    <section id="آلية-عملنا" className="h-screen md:w-[182vw] xl:w-[178vw] 2xl:w-[155vw] flex justify-center items-center gap-10 xl:gap-16 2xl:gap-32">
       <div>
         <div className="w-full flex flex-col space-y-4">
           <Title text="آليــة عملنـــا" />

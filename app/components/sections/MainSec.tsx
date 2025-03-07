@@ -1,7 +1,7 @@
 
 const MainSec = () => {
     return (
-        <section id="الرئيسية" className="h-screen bg-secondary">
+        <section id="الرئيسية" className="h-screen ">
         </section>
     )
 }
