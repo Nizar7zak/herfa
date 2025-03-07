@@ -69,7 +69,7 @@ const HowWeWork = () => {
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 1 }}
             >
-              <Card text={content} srcImage={src} />
+              <Card text={content} srcImage={src} isService={false}  />
             </motion.div>
           ))}
         </motion.div>
