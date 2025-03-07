@@ -30,17 +30,17 @@ const initialSliderContent: SliderItem[] = [
 ];
 
 const HowWeWork = () => {
-  const [sliderContent, setSliderContent] = useState(initialSliderContent);
+  const [ sliderContent, setSliderContent ] = useState( initialSliderContent );
 
   const handleImageClick = () => {
-    setSliderContent((prev) => {
-      const [first, ...rest] = prev;
-      return [...rest, first]; 
-    });
+    setSliderContent( ( prev ) => {
+      const [ first, ...rest ] = prev;
+      return [ ...rest, first ];
+    } );
   };
 
   return (
-    <section id="آلية-عملنا" className="h-screen md:w-[182vw] xl:w-[178vw] 2xl:w-[168vw] flex justify-center items-center gap-10 xl:gap-16 2xl:gap-24">
+    <section id="آلية-عملنا" className="h-screen md:w-[182vw] xl:w-[178vw] 2xl:w-[168vw] 3xl:w-[158vw] flex justify-center items-center gap-10 xl:gap-16 2xl:gap-24 3xl:gap-32">
       <div>
         <div className="w-full flex flex-col space-y-4">
           <Title text="آليــة عملنـــا" />
@@ -48,30 +48,30 @@ const HowWeWork = () => {
         </div>
       </div>
 
-      <Image 
-        src={Right} 
-        alt="right" 
+      <Image
+        src={ Right }
+        alt="right"
         className="cursor-pointer transition-transform duration-300 hover:scale-115"
-        onClick={handleImageClick}
+        onClick={ handleImageClick }
       />
 
       <div className="flex flex-col p-3 border-2 border-active rounded-lg">
-        <motion.div 
+        <motion.div
           className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-10 -mt-6"
           layout
-          transition={{ type: "spring", stiffness: 200, damping: 50 }}
+          transition={ { type: "spring", stiffness: 200, damping: 50 } }
         >
-          {sliderContent.map(({ content, src }) => (
+          { sliderContent.map( ( { content, src } ) => (
             <motion.div
-              key={content}
+              key={ content }
               layout
-              initial={{ opacity: 1 }}
-              animate={{ opacity: [1, 0, 1] }}
-              transition={{ duration: 1 }}
+              initial={ { opacity: 1 } }
+              animate={ { opacity: [ 1, 0, 1 ] } }
+              transition={ { duration: 1 } }
             >
-              <Card text={content} srcImage={src} isService={false}  />
+              <Card text={ content } srcImage={ src } isService={ false } />
             </motion.div>
-          ))}
+          ) ) }
         </motion.div>
       </div>
     </section>
