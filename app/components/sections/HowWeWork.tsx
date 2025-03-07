@@ -40,7 +40,7 @@ const HowWeWork = () => {
   };
 
   return (
-    <section id="آلية-عملنا" className="h-screen md:w-[182vw] xl:w-[178vw] 2xl:w-[168vw] 3xl:w-[150vw] flex justify-center items-center gap-10 xl:gap-16 2xl:gap-24 3xl:gap-32">
+    <section id="آلية-عملنا" className="h-screen md:w-[184vw] xl:w-[178vw] 2xl:w-[158vw] 3xl:w-[151vw] flex justify-center items-center gap-10 xl:gap-16 2xl:gap-24 3xl:gap-48">
       <div>
         <div className="w-full flex flex-col space-y-4">
           <Title text="آليــة عملنـــا" />
@@ -48,31 +48,35 @@ const HowWeWork = () => {
         </div>
       </div>
 
-      <Image
-        src={ Right }
-        alt="right"
-        className="cursor-pointer transition-transform duration-300 hover:scale-120 -ml-16"
-        onClick={ handleImageClick }
-      />
+      <div className="flex justify-center items-center gap-10">
 
-      <div className="flex flex-col p-3 border-4 border-active rounded-lg">
-        <motion.div
-          className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-10 -mt-6"
-          layout
-          transition={ { type: "spring", stiffness: 200, damping: 50 } }
-        >
-          { sliderContent.map( ( { content, src } ) => (
-            <motion.div
-              key={ content }
-              layout
-              initial={ { opacity: 1 } }
-              animate={ { opacity: [ 1, 0, 1 ] } }
-              transition={ { duration: 1 } }
-            >
-              <Card text={ content } srcImage={ src } isService={ false } />
-            </motion.div>
-          ) ) }
-        </motion.div>
+
+        <Image
+          src={ Right }
+          alt="right"
+          className="cursor-pointer transition-transform duration-300 hover:scale-120 "
+          onClick={ handleImageClick }
+        />
+
+        <div className="flex flex-col p-3 border-4 border-active rounded-lg">
+          <motion.div
+            className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-10 -mt-6"
+            layout
+            transition={ { type: "spring", stiffness: 200, damping: 50 } }
+          >
+            { sliderContent.map( ( { content, src } ) => (
+              <motion.div
+                key={ content }
+                layout
+                initial={ { opacity: 1 } }
+                animate={ { opacity: [ 1, 0, 1 ] } }
+                transition={ { duration: 1 } }
+              >
+                <Card text={ content } srcImage={ src } isService={ false } />
+              </motion.div>
+            ) ) }
+          </motion.div>
+        </div>
       </div>
     </section>
   );
