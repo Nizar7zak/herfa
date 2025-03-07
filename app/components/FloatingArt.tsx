@@ -1,7 +1,6 @@
 "use client";
 import { useSectionStore } from "@/lib/store";
 import ArtSide from "@/public/Union.svg";
-import ArtSide2 from "@/public/art2.svg";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -23,8 +22,8 @@ const FloatingArt = () => {
           ease: "linear",
         } }
       >
-        <Image alt="زخرفة 1" src={ isSpecial ? ArtSide2 : ArtSide } />
-        <Image alt="زخرفة 2" src={ isSpecial ? ArtSide2 : ArtSide } className={ isSpecial ? "" : "-my-3" } />
+        <Image alt="زخرفة 1" src={ ArtSide } />
+        <Image alt="زخرفة 2" src={ ArtSide } className={ "-my-3" } />
       </motion.div>
     </div>
   );
