@@ -51,7 +51,7 @@ const HowWeWork = () => {
       <Image
         src={ Right }
         alt="right"
-        className="cursor-pointer transition-transform duration-300 hover:scale-115"
+        className="cursor-pointer transition-transform duration-300 hover:scale-120 -ml-16"
         onClick={ handleImageClick }
       />
 
