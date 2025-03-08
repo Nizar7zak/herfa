@@ -54,7 +54,7 @@ const HowWeWork = () => {
         <Image
           src={ Right }
           alt="right"
-          className="cursor-pointer transition-transform duration-300 hover:scale-120 "
+          className="cursor-pointer transition-transform duration-100 hover:scale-120 "
           onClick={ handleImageClick }
         />
 
@@ -62,15 +62,15 @@ const HowWeWork = () => {
           <motion.div
             className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-10 -mt-6"
             layout
-            transition={ { type: "spring", stiffness: 200, damping: 50 } }
+            transition={ { type: "spring", stiffness: 500, damping: 200 } }
           >
             { sliderContent.map( ( { content, src } ) => (
               <motion.div
                 key={ content }
                 layout
                 initial={ { opacity: 1 } }
-                animate={ { opacity: [ 1, 0, 1 ] } }
-                transition={ { duration: 1 } }
+                animate={ { opacity: [ 1, 0, 0.1, 1 ] } }
+                transition={ { duration: 2 } }
               >
                 <Card text={ content } srcImage={ src } isService={ false } />
               </motion.div>
