@@ -13,11 +13,10 @@ const Logos = () => {
 
     useEffect(() => {
         if (!isHome) {
-            // Delay vision appearance by 1 second when isHome becomes false
             const timer = setTimeout(() => setShowVision(true), 1000);
-            return () => clearTimeout(timer); // Cleanup on re-render
+            return () => clearTimeout(timer); 
         } else {
-            setShowVision(false); // Hide immediately when isHome is true
+            setShowVision(false); 
         }
     }, [isHome]);
 
@@ -32,7 +31,6 @@ const Logos = () => {
             <div className="flex justify-between items-center">
                 {!isHome && (
                     <div className="flex justify-between items-center">
-                        {/* Vision Image - Appears AFTER 1 second, slides in from left */}
                         <Image
                             src={Vision}
                             alt="Vision-2030"
@@ -41,7 +39,6 @@ const Logos = () => {
                             `}
                         />
 
-                        {/* Line Image - Appears immediately */}
                         <Image
                             src={Line}
                             alt="line"
