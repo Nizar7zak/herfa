@@ -36,21 +36,18 @@ const ScrollNavigator = () => {
         const prevSection = sections[currentIndex];
         const nextSection = sections[nextIndex];
 
-        // Fade out the previous section
         const prevElement = document.getElementById(prevSection);
         if (prevElement) {
-          prevElement.style.transition = "opacity 0.3s ease";
+          prevElement.style.transition = "opacity 0.6s ease";
           prevElement.style.opacity = "0";
         }
 
-        // Scroll to the next section
         document.getElementById(nextSection)?.scrollIntoView({ behavior: "smooth" });
         setActiveSection(nextSection);
 
-        // Restore opacity when scrolling back up
         const nextElement = document.getElementById(nextSection);
         if (nextElement) {
-          nextElement.style.transition = "opacity 0.3s ease";
+          nextElement.style.transition = "opacity 0.6s ease";
           nextElement.style.opacity = "1";
         }
 
