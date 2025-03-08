@@ -1,5 +1,8 @@
 
 import Nezar from "@/public/members/nezar.jpg"
+import Master from "@/public/members/master.jpg"
+import Wa6n from "@/public/members/wa6n.jpg"
+import Salim from "@/public/members/salim.jpg"
 import MemberCard from "../MemberCard"
 import Title from "../Title"
 import First from "@/public/team/first.svg"
@@ -19,7 +22,7 @@ const TeamMembers = () => {
     const members = [
         { 
             fullName: "أحمد العسقلاني", 
-            src: Nezar, jobDescription: "موشن جرافيك | UI\UX | مونتاج", 
+            src: Master, jobDescription: "موشن جرافيك | UI\UX | مونتاج", 
             skillsIcons: [ 
                 Fifth, 
                 Fourth, 
@@ -29,7 +32,7 @@ const TeamMembers = () => {
         },
         { 
             fullName: "سامر البرقوني", 
-            src: Nezar, 
+            src: Wa6n, 
             jobDescription: "تصميم الجرافيكي | تصميم المطبوعات", 
             skillsIcons: [ 
                 Fifth, 
@@ -54,7 +57,7 @@ const TeamMembers = () => {
         },
         { 
             fullName: "سليم الحسنات", 
-            src: Nezar, 
+            src: Salim, 
             jobDescription: "تصميم الجرافيكي | تصميم المطبوعات", 
             skillsIcons: [ 
                 Fifth, 
