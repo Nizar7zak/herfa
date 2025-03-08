@@ -13,7 +13,7 @@ const Logos = () => {
 
     useEffect(() => {
         if (!isHome) {
-            const timer = setTimeout(() => setShowVision(true), 1000);
+            const timer = setTimeout(() => setShowVision(true), 400);
             return () => clearTimeout(timer); 
         } else {
             setShowVision(false); 
