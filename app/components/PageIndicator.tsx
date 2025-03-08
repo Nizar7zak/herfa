@@ -6,7 +6,7 @@ const sections = [
     { id: "من-نحن", label: "02" },
     { id: "آلية-عملنا", label: "03" },
     {
-        id: "خدماتنا",
+        id: "الخدمات-التسويقية",
         label: "04",
         subSections: [
             { id: "الخدمات-التسويقية", label: "" },
@@ -18,6 +18,7 @@ const sections = [
     { id: "خبراتنا", label: "06" },
     { id: "تواصل-معنا", label: "07" },
 ];
+
 const PageIndicator = () => {
     const { activeSection, setActiveSection } = useSectionStore();
 
@@ -31,7 +32,7 @@ const PageIndicator = () => {
                         onClick={() => setActiveSection(section.id)}
                         href={`#${section.id}`}
                         className={`transition-all ${
-                            activeSection === section.id || (section.id === "خدماتنا" && isServicesActive)
+                            activeSection === section.id || (section.id === "الخدمات-التسويقية" && isServicesActive)
                                 ? "text-active font-bold text-xl"
                                 : "text-primary"
                         }`}

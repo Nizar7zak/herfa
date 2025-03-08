@@ -15,11 +15,11 @@ const sections = [
 ];
 
 const ScrollNavigator = () => {
-  const { setActiveSection } = useSectionStore();
+  const {activeSection,setActiveSection } = useSectionStore();
 
   useEffect(() => {
     let isScrolling = false;
-    let currentIndex = 0;
+    let currentIndex = sections.indexOf(activeSection);
 
     const handleScroll = (event: WheelEvent) => {
       if (isScrolling) return;
@@ -40,6 +40,10 @@ const ScrollNavigator = () => {
         if (prevElement) {
           prevElement.style.transition = "opacity 0.3s ease";
           prevElement.style.opacity = "0";
+          setTimeout(() => {
+            prevElement.style.opacity = "1";
+  
+          }, 1000)
         }
 
         document.getElementById(nextSection)?.scrollIntoView({ behavior: "smooth" });
@@ -59,7 +63,7 @@ const ScrollNavigator = () => {
 
     window.addEventListener("wheel", handleScroll);
     return () => window.removeEventListener("wheel", handleScroll);
-  }, [setActiveSection]);
+  }, [activeSection, setActiveSection]);
 
   return null;
 };
