@@ -62,7 +62,7 @@ const HowWeWork = () => {
           <motion.div
             className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-10 -mt-6"
             layout
-            transition={ { type: "spring", stiffness: 500, damping: 200 } }
+            transition={ { type: "spring", stiffness: 100, damping: 10 } }
           >
             { sliderContent.map( ( { content, src } ) => (
               <motion.div
