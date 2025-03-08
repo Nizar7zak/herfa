@@ -21,6 +21,7 @@ const sections = [
 const PageIndicator = () => {
     const { activeSection, setActiveSection } = useSectionStore();
 
+    const isServicesActive = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection);
 
     return (
         <div className="fixed right-[5.93rem] top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
@@ -29,7 +30,11 @@ const PageIndicator = () => {
                     <a
                         onClick={() => setActiveSection(section.id)}
                         href={`#${section.id}`}
-                        className={`transition-all ${activeSection === section.id ? "text-active font-bold text-xl" : "text-primary"}`}
+                        className={`transition-all ${
+                            activeSection === section.id || (section.id === "خدماتنا" && isServicesActive)
+                                ? "text-active font-bold text-xl"
+                                : "text-primary"
+                        }`}
                     >
                         {section.label}
                     </a>
@@ -41,7 +46,10 @@ const PageIndicator = () => {
                                     key={sub.id}
                                     onClick={() => setActiveSection(sub.id)}
                                     href={`#${sub.id}`}
-                                    className={`w-2 h-2 rounded-full transition-all cursor-pointer ${activeSection === sub.id ? "bg-active" : "bg-white"}`}                                >
+                                    className={`w-2 h-2 rounded-full transition-all cursor-pointer ${
+                                        activeSection === sub.id ? "bg-active" : "bg-white"
+                                    }`}
+                                >
                                     {sub.label}
                                 </a>
                             ))}
