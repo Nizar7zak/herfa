@@ -19,7 +19,7 @@ import TechnicalServices from "./components/sections/TechnicalServices";
 
 export default function Home() {
   return (
-    <div className="relative ">
+    <div className="relative overflow-x-hidden">
       <Navbar />
       <PageIndicator />
       <ScrollNavigator />

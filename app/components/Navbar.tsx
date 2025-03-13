@@ -1,7 +1,9 @@
 "use client";
+import { useState } from "react";
 import { useSectionStore } from "@/lib/store";
-import Animation from '@/public/Vector.svg';
+import { FaBars, FaTimes } from "react-icons/fa";
 import Image from "next/image";
+import Animation from '@/public/Vector.svg';
 
 const sections = [
     { id: "الرئيسية", label: "الرئيسية" },
@@ -11,9 +13,9 @@ const sections = [
         id: "الخدمات-التسويقية",
         label: "خدماتنا",
         subSections: [
-            { id: "الخدمات-التسويقية", label: "" },
-            { id: "الخدمات-الإبداعية", label: "" },
-            { id: "الخدمات-التقنية", label: "" }
+            { id: "الخدمات-التسويقية", label: "الخدمات التسويقية" },
+            { id: "الخدمات-الإبداعية", label: "الخدمات الإبداعية" },
+            { id: "الخدمات-التقنية", label: "الخدمات التقنية" }
         ]
     },
     { id: "فريق-العمل", label: "فريق العمل" },
@@ -23,6 +25,7 @@ const sections = [
 
 const Navbar = () => {
     const { activeSection, isHome, setActiveSection } = useSectionStore();
+    const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = (id: string) => {
         const index = sections.findIndex((section) => section.id === id || (section.subSections?.some(sub => sub.id === id)));
@@ -30,15 +33,16 @@ const Navbar = () => {
         if (index !== -1) {
             document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
             setActiveSection(sections[index].id);
+            setIsOpen(false); 
         }
     };
 
     const isServicesActive = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection);
 
     return (
-        <nav className="fixed top-[5.25rem] left-0 w-full z-50 px-[6.3rem]">
+        <nav className="fixed lg:top-[5.25rem] left-0 w-full z-50 px-[6.3rem]">
             <div
-                className={`fixed transition-all duration-500 ${
+                className={`fixed transition-all duration-500 hidden lg:block ${
                     isHome
                         ? "-top-[12rem] -left-[12rem] transform opacity-100 animate-floatRotate"
                         : "-top-[25rem] -left-[25rem] transform opacity-0"
@@ -47,7 +51,13 @@ const Navbar = () => {
                 <Image src={Animation} alt="Logo-herfa" className="transition-all duration-500" />
             </div>
 
-            <ul className="flex gap-4 2xl:gap-6">
+            <div className="lg:hidden fixed top-12 right-12 z-50">
+                <button onClick={() => setIsOpen(!isOpen)} className="text-white text-3xl">
+                    {isOpen ? <FaTimes /> : <FaBars />}
+                </button>
+            </div>
+
+            <ul className="hidden lg:flex gap-4 2xl:gap-6">
                 {sections.map((section) => (
                     <li key={section.id}>
                         <button
@@ -55,31 +65,33 @@ const Navbar = () => {
                             className={`transition-all text-sm 2xl:text-lg ${
                                 activeSection === section.id || (section.id === "الخدمات-التسويقية" && isServicesActive)
                                 ? "text-active font-bold"
-                                    : "text-white"
+                                : "text-white"
                             }`}
                         >
                             {section.label}
                         </button>
-
-                        {section.subSections && section.id === "خدماتنا" && (
-                            <ul className="mt-2 space-y-1">
-                                {section.subSections.map((subSection) => (
-                                    <li key={subSection.id}>
-                                        <button
-                                            onClick={() => handleClick(subSection.id)}
-                                            className={`text-sm transition-all ${
-                                                activeSection === subSection.id ? "text-active font-bold" : "text-white"
-                                            }`}
-                                        >
-                                            {subSection.label}
-                                        </button>
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
                     </li>
                 ))}
             </ul>
+
+            {/* Mobile Full-Screen Menu */}
+            <div
+                className={`fixed inset-0 bg-secondary bg-opacity-90 flex flex-col items-center justify-center space-y-6 transition-transform duration-300 ${
+                    isOpen ? "translate-x-0" : "-translate-x-full"
+                } lg:hidden`}
+            >
+                {sections.map((section) => (
+                    <button
+                        key={section.id}
+                        onClick={() => handleClick(section.id)}
+                        className={`text-white text-2xl transition-all ${
+                            activeSection === section.id ? "text-active font-bold" : "text-primary"
+                        }`}
+                    >
+                        {section.label}
+                    </button>
+                ))}
+            </div>
         </nav>
     );
 };

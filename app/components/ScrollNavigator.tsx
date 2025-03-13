@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSectionStore } from "@/lib/store";
 
 const sections = [
@@ -15,9 +15,19 @@ const sections = [
 ];
 
 const ScrollNavigator = () => {
-  const {activeSection,setActiveSection } = useSectionStore();
+  const { activeSection, setActiveSection } = useSectionStore();
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
+    const checkScreenSize = () => setIsDesktop(window.innerWidth >= 1024);
+    checkScreenSize(); // Check on mount
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) return; // Don't apply scroll behavior on mobile
+
     let isScrolling = false;
     let currentIndex = sections.indexOf(activeSection);
 
@@ -33,27 +43,10 @@ const ScrollNavigator = () => {
       const nextIndex = direction === "down" ? currentIndex + 1 : currentIndex - 1;
 
       if (nextIndex >= 0 && nextIndex < sections.length) {
-        const prevSection = sections[currentIndex];
         const nextSection = sections[nextIndex];
-
-        const prevElement = document.getElementById(prevSection);
-        if (prevElement) {
-          prevElement.style.transition = "opacity 0.3s ease";
-          prevElement.style.opacity = "0";
-          setTimeout(() => {
-            prevElement.style.opacity = "1";
-  
-          }, 1000)
-        }
 
         document.getElementById(nextSection)?.scrollIntoView({ behavior: "smooth" });
         setActiveSection(nextSection);
-
-        const nextElement = document.getElementById(nextSection);
-        if (nextElement) {
-          nextElement.style.transition = "opacity 0.3s ease";
-          nextElement.style.opacity = "1";
-        }
 
         setTimeout(() => {
           currentIndex = nextIndex;
@@ -63,7 +56,7 @@ const ScrollNavigator = () => {
 
     window.addEventListener("wheel", handleScroll);
     return () => window.removeEventListener("wheel", handleScroll);
-  }, [activeSection, setActiveSection]);
+  }, [activeSection, setActiveSection, isDesktop]);
 
   return null;
 };

@@ -25,7 +25,7 @@ const PageIndicator = () => {
     const isServicesActive = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection);
 
     return (
-        <div className="fixed right-[5.93rem] top-1/2 transform -translate-y-1/2 flex flex-col space-y-4">
+        <div className="fixed right-[5.93rem] top-1/2 transform -translate-y-1/2  flex-col space-y-4 hidden lg:flex">
             {sections.map((section) => (
                 <div key={section.id} className="flex flex-col items-center">
                     <a

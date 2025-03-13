@@ -40,7 +40,7 @@ const HowWeWork = () => {
   };
 
   return (
-    <section id="آلية-عملنا" className="h-screen md:w-[184vw] xl:w-[178vw] 2xl:w-[158vw] 3xl:w-[151vw] flex justify-center items-center gap-10 xl:gap-16 2xl:gap-24 3xl:gap-48">
+    <section id="آلية-عملنا" className="h-screen w-[100vw] lg:w-[184vw] xl:w-[178vw] 2xl:w-[158vw] 3xl:w-[151vw] flex justify-center items-center gap-10 xl:gap-16 2xl:gap-24 3xl:gap-48">
       <div>
         <div className="w-full flex flex-col space-y-4">
           <Title text="آليــة عملنـــا" />
@@ -49,7 +49,6 @@ const HowWeWork = () => {
       </div>
 
       <div className="flex justify-center items-center gap-10">
-
 
         <Image
           src={ Right }

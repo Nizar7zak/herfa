@@ -21,23 +21,35 @@ body {
 }
 
 
-html, body {
-  scroll-behavior: smooth;
-  height: 100%;
-  overflow: hidden; /* Prevents default scrolling behavior */
+@media (min-width: 1024px) {
+  html, body {
+    scroll-behavior: smooth;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; 
+  }
+
+  section {
+    height: 100vh;
+    scroll-snap-align: start; 
+  }
 }
 
-.scroll-container {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory; /* Enables vertical snap scrolling */
-}
 
-section {
-  height: 100vh;
-  scroll-snap-align: start; /* Ensures each section snaps to the viewport */
-}
+@media (max-width: 1023px) {
+  .scroll-container {
+    height: auto;
+    overflow-y: auto; 
+    scroll-snap-type: none; 
+  }
 
-.transition-all {
-  transition: all 0.5s ease-in-out;
+  section {
+    height: auto; 
+    scroll-snap-align: none;
+  }
 }
