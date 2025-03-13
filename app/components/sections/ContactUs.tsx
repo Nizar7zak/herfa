@@ -24,7 +24,7 @@ const ContactUs = () => {
                     ) }
                 </ul>
             </div>
-            <div className='w-[75%]'>
+            <div className='w-[75%] lg:w-1/3'>
 
                 <Form />
 
