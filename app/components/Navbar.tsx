@@ -74,17 +74,16 @@ const Navbar = () => {
                 ))}
             </ul>
 
-            {/* Mobile Full-Screen Menu */}
             <div
-                className={`fixed inset-0 bg-secondary bg-opacity-90 flex flex-col items-center justify-center space-y-6 transition-transform duration-300 ${
-                    isOpen ? "translate-x-0" : "-translate-x-full"
+                className={`fixed inset-0 bg-secondary bg-opacity-[0.97] flex flex-col items-center justify-center space-y-6 transition-transform duration-300 ${
+                    isOpen ? "translate-x-0" : "translate-x-full"
                 } lg:hidden`}
             >
                 {sections.map((section) => (
                     <button
                         key={section.id}
                         onClick={() => handleClick(section.id)}
-                        className={`text-white text-2xl transition-all ${
+                        className={`text-lg transition-all ${
                             activeSection === section.id ? "text-active font-bold" : "text-primary"
                         }`}
                     >
