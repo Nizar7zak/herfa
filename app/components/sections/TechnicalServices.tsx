@@ -13,7 +13,7 @@ const TechnicalServices = () => {
 
     return (
         <section id="الخدمات-التقنية" className="h-screen flex flex-col justify-center items-center  gap-10 xl:gap-14 2xl:gap-16">
-            <div className="space-y-4 w-[42%] flex flex-col justify-center items-center">
+            <div className="space-y-4 w-[75%] lg:w-[42%] flex flex-col justify-center items-center">
                 <Title text="الخــدمــات التقنيــــة" />
                 <Description text={ `لأن كل نشاط تجاري غير موجود على الانترنت، فهو ذاهب للتلاشي لا محالة... نقدم خدماتنا التقنية التالية:` } />
             </div>

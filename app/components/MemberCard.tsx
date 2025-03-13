@@ -9,8 +9,8 @@ interface Props {
 
 const MemberCard = ( { fullName, src, jobDescription, skillsIcons }: Props ) => {
   return (
-    <div className="flex w-[35%] justify-center items-center ">
-      <div className="w-[14vw] h-[14vw] xl:w-[12vw] xl:h-[12vw] rounded-full bg-slate-300 overflow-hidden ml-4 xl:ml-6">
+    <div className="flex w-[80%] md:w-[40%] lg:w-[35%] justify-center items-center ">
+      <div className="w-[24vw] h-[24vw] lg:w-[14vw] lg:h-[14vw] xl:w-[12vw] xl:h-[12vw] rounded-full bg-slate-300 overflow-hidden ml-4 xl:ml-6">
         <Image alt="team member picture" src={ src } />
       </div>
       <div className="flex flex-col w-[57%] gap-y-2 xl:gap-y-3 2xl:gap-y-5">

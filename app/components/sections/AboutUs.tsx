@@ -5,12 +5,12 @@ import Title from '../Title'
 
 const AboutUs = () => {
   return (
-    <section id="من-نحن" className="h-screen flex justify-center items-center gap-24">
+    <section id="من-نحن" className="h-screen flex justify-center items-center gap-6 lg:gap-24 flex-col lg:flex-row">
 
-    <div className="w-[25%] 2xl:w-[28%] flex justify-center items-center">
+    <div className="w-[75%] lg:w-[25%] 2xl:w-[28%] flex justify-center items-center">
       <Image src={ AboutUsPic } alt="من نحن" />
     </div>
-    <div className="flex flex-col space-y-8 w-[35%] ">
+    <div className="flex flex-col space-y-8 w-[75%] lg:w-[35%] ">
       <div className="w-full flex flex-col space-y-4">
         <Title text="من نحن" />
         <Description
