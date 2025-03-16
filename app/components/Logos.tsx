@@ -34,7 +34,7 @@ const Logos = () => {
     return (
         <>
             <div
-                className={ `fixed transition-all duration-500 flex flex-col items-center space-y-2 xl:space-y-4
+                className={ `fixed transition-all duration-500 flex flex-col items-center space-y-2 xl:space-y-4 
                 ${isHome
                         ? "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 scale-[4] hidden lg:flex"
                         : "top-[3.125rem] left-[5.8rem] scale-100 hidden lg:flex"
@@ -71,8 +71,8 @@ const Logos = () => {
             </div>
 
             <div
-                className={ `fixed top-[1.2rem] left-[1.25rem] flex items-center gap-1 lg:hidden transition-opacity duration-500
-                    ${showMobileElements ? "opacity-100" : "opacity-0 pointer-events-none z-50"}
+                className={ `fixed top-[1.2rem] left-[1.25rem] flex items-center gap-1 lg:hidden transition-opacity duration-500 z-50
+                    ${showMobileElements ? "opacity-100" : "opacity-0 pointer-events-none"}
                 `}
             >
                 <Image src={ Vision } alt="Vision-2030" className="w-[60px] h-auto opacity-100 transition-all duration-700" />

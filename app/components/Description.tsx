@@ -1,16 +1,11 @@
-import { useSectionStore } from "@/lib/store";
-
 interface Props {
-    text: string
+    text: string;
+    textPosition: string
 }
-const Description = ( { text }: Props ) => {
-    const { activeSection } = useSectionStore();
-
-    const isSpecialSection = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection);
-    const textJustify = isSpecialSection ? "text-center" : "text-justify";
+const Description = ( { text, textPosition }: Props ) => {
     
     return (
-        <h1 className={`text-white font-normal ${textJustify} md:text-[0.8rem] xl:text-base leading-7 xl:leading-[2.1rem]`}>{ text }</h1>
+        <h1 className={`text-white font-normal text-${textPosition} md:text-[0.8rem] xl:text-base leading-7 xl:leading-[2.1rem]`}>{ text }</h1>
     )
 }
 

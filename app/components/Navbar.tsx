@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
 import { FaTimes } from "react-icons/fa";
+import SocialIcons from "./SocialIcons";
 
 const sections = [
     { id: "الرئيسية", label: "الرئيسية" },
@@ -41,11 +42,11 @@ const Navbar = () => {
     const isServicesActive = [ "الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية" ].includes( activeSection );
 
     return (
-        <nav className="fixed lg:top-[5.25rem] left-0 w-full z-50 px-[6.3rem]">
+        <nav className="fixed lg:top-[5.25rem] left-0 w-full z-50 px-[6.3rem] ">
             <div
                 className={ `fixed transition-all duration-500 hidden lg:block ${isHome
-                        ? "-top-[12rem] -left-[12rem] transform opacity-100 animate-floatRotate"
-                        : "-top-[25rem] -left-[25rem] transform opacity-0"
+                    ? "-top-[12rem] -left-[12rem] transform opacity-100 animate-floatRotate"
+                    : "-top-[25rem] -left-[25rem] transform opacity-0"
                     }` }
             >
                 <Image src={ Animation } alt="Logo-herfa" className="transition-all duration-500" />
@@ -63,30 +64,36 @@ const Navbar = () => {
                         <button
                             onClick={ () => handleClick( section.id ) }
                             className={ `transition-all text-sm 2xl:text-lg ${activeSection === section.id || ( section.id === "الخدمات-التسويقية" && isServicesActive )
-                                    ? "text-active font-bold"
-                                    : "text-white"
+                                ? "text-active font-bold"
+                                : "text-white"
                                 }` }
                         >
                             { section.label }
                         </button>
                     </li>
                 ) ) }
+
             </ul>
 
             <div
-                className={ `fixed inset-0 bg-secondary bg-opacity-[0.97] flex flex-col items-center justify-center space-y-6 transition-transform duration-300 ${isOpen ? "translate-x-0" : "translate-x-full"
-                    } lg:hidden` }
+                className={ `fixed inset-0 bg-secondary bg-opacity-[0.97] transition-transform flex flex-col items-center justify-center duration-300 space-y-44
+                    ${isOpen ? "translate-x-0" : "translate-x-full"} lg:hidden` }
             >
-                { sections.map( ( section ) => (
-                    <button
-                        key={ section.id }
-                        onClick={ () => handleClick( section.id ) }
-                        className={ `text-lg transition-all ${activeSection === section.id ? "text-active font-bold" : "text-primary"
-                            }` }
-                    >
-                        { section.label }
-                    </button>
-                ) ) }
+                <div className="flex flex-col items-center justify-center space-y-6">
+
+                    { sections.map( ( section ) => (
+                        <button
+                            key={ section.id }
+                            onClick={ () => handleClick( section.id ) }
+                            className={ `text-lg transition-all ${activeSection === section.id ? "text-active font-bold" : "text-primary"
+                                }` }
+                        >
+                            { section.label }
+                        </button>
+                    ) ) }
+                </div>
+                <SocialIcons />
+
             </div>
         </nav>
     );

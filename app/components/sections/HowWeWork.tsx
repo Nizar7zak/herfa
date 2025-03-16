@@ -41,14 +41,16 @@ const HowWeWork = () => {
 
   return (
     <section id="آلية-عملنا" 
-      className="h-screen w-full lg:w-[184vw] xl:w-[178vw] 2xl:w-[158vw] 3xl:w-[151vw] 
+      className="h-screen w-full lg:w-[184vw] xl:w-[178vw] 2xl:w-[158vw] 3xl:w-[151vw] lg:bg-transparent
       flex justify-center items-center gap-12 lg:gap-10 xl:gap-16 2xl:gap-24 3xl:gap-48
       flex-col lg:flex-row 
       ">
       <div>
         <div className="w-full flex flex-col space-y-4">
           <Title text="آليــة عملنـــا" />
-          <Description text="المسار الفعلي الذي نسيره معاً للوصول إلى الهدف" />
+          <Description text="المسار الفعلي الذي نسيره معاً للوصول إلى الهدف" 
+            textPosition="right"
+          />
         </div>
       </div>
 
