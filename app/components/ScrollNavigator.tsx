@@ -29,7 +29,7 @@ const ScrollNavigator = () => {
   useEffect(() => {
     if (!isDesktop || isLocked) return;
 
-    let currentIndex = sections.indexOf(activeSection);
+    const currentIndex = sections.indexOf(activeSection);
 
     const moveToSection = (direction: "up" | "down") => {
       const nextIndex = direction === "down" ? currentIndex + 1 : currentIndex - 1;
