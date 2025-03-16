@@ -26,7 +26,7 @@ export default function Home() {
       <FloatingArt />
       <Icons />
       <Logos />
-
+      
       <MainSec />
       <AboutUs />
       <HowWeWork />
