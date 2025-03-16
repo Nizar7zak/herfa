@@ -51,7 +51,7 @@ const Navbar = () => {
                 <Image src={ Animation } alt="Logo-herfa" className="transition-all duration-500" />
             </div>
 
-            <div className="lg:hidden fixed top-10 right-6 z-50">
+            <div className="lg:hidden fixed top-9 right-6 z-50">
                 <button onClick={ () => setIsOpen( !isOpen ) } className="text-white text-3xl">
                     { isOpen ? <FaTimes /> : <CgMenuGridO size={ 45 } /> }
                 </button>

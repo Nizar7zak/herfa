@@ -72,7 +72,7 @@ const Logos = () => {
 
             <div
                 className={ `fixed top-[1.2rem] left-[1.25rem] flex items-center gap-1 lg:hidden transition-opacity duration-500
-                    ${showMobileElements ? "opacity-100" : "opacity-0 pointer-events-none"}
+                    ${showMobileElements ? "opacity-100" : "opacity-0 pointer-events-none z-50"}
                 `}
             >
                 <Image src={ Vision } alt="Vision-2030" className="w-[60px] h-auto opacity-100 transition-all duration-700" />
