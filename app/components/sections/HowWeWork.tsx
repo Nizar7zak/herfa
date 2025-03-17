@@ -50,7 +50,7 @@ const HowWeWork = () => {
     } );
   };
   const titleColor = "text-secondary lg:text-active"
-  const descriptionColor = "text-active lg:text-primary"
+  const descriptionColor = "text-secondary lg:text-primary"
 
   return (
     <section id="آلية-عملنا"
