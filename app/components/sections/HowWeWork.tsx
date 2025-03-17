@@ -38,17 +38,20 @@ const HowWeWork = () => {
       return [ ...rest, first ];
     } );
   };
+  let titleColor = "text-secondary lg:text-active"
+  let descriptionColor = "text-active lg:text-primary"
 
   return (
-    <section id="آلية-عملنا" 
+    <section id="آلية-عملنا"
       className=" bg-primary mt-60 rounded-[3rem] lg:rounded-none
       h-[65vh] lg:h-screen w-full lg:w-[184vw] xl:w-[178vw] 2xl:w-[158vw] 3xl:w-[151vw] lg:bg-transparent
-      flex justify-center items-center gap-12 lg:gap-10 xl:gap-16 2xl:gap-24 3xl:gap-48 flex-col lg:flex-row ">
+      flex justify-start lg:justify-center items-center gap-16 lg:gap-10 xl:gap-16 2xl:gap-24 3xl:gap-48 flex-col lg:flex-row py-16 lg:py-0 ">
       <div>
-        <div className="w-full flex flex-col space-y-4">
-          <Title text="آليــة عملنـــا" />
-          <Description text="المسار الفعلي الذي نسيره معاً للوصول إلى الهدف" 
+        <div className="w-full flex flex-col space-y-4 justify-center items-center lg:justify-start lg:items-start">
+          <Title text="آليــة عملنـــا" textColor={ titleColor } />
+          <Description text="المسار الفعلي الذي نسيره معاً للوصول إلى الهدف"
             textPosition="right"
+            textColor={ descriptionColor }
           />
         </div>
       </div>
@@ -62,7 +65,7 @@ const HowWeWork = () => {
           onClick={ handleImageClick }
         />
 
-        <div className="flex flex-col p-3 border-4 border-active rounded-lg">
+        <div className="flex flex-col p-3">
           <motion.div
             className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-10 -mt-6"
             layout

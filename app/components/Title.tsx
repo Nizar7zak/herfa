@@ -1,10 +1,12 @@
 
 interface Props {
-    text: string
+    text: string;
+    textColor?: string;
+
 }
-const Title = ( { text }: Props ) => {
+const Title = ( { text, textColor }: Props ) => {
     return (
-        <h1 className="text-[20px] lg:text-[28px] xl:text-[36px] 2xl:[2.5rem] text-active font-semibold">{ text }</h1>
+        <h1 className={`text-[20px] lg:text-[28px] xl:text-[36px] 2xl:[2.5rem] text-active font-semibold ${textColor}`}>{ text }</h1>
     )
 }
 
