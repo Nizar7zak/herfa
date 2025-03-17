@@ -67,7 +67,7 @@ const TeamMembers = () => {
         },
     ]
     return (
-        <section id="فريق-العمل" className="h-[65vh] lg:h-screen flex flex-col justify-center items-center gap-8 md:gap-12 lg:gap-16 ">
+        <section id="فريق-العمل" className="h-[70vh] lg:h-screen flex flex-col justify-center items-center gap-8 md:gap-12 lg:gap-16 ">
             <Title text="فريـــق العمـــل" />
 
             <div className="flex justify-center items-center gap-x-8 gap-y-12 xl:gap-x-8 xl:gap-y-16 flex-wrap ">
