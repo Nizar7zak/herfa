@@ -1,6 +1,5 @@
 "use client"
 
-import BgBlur from "./components/BgBlur";
 import FloatingArt from "./components/FloatingArt";
 import Icons from "./components/Icons";
 import Logos from "./components/Logos";
@@ -27,7 +26,6 @@ export default function Home() {
       <FloatingArt />
       <Icons />
       <Logos />
-      <BgBlur />
       
       <MainSec />
       <AboutUs />

@@ -14,7 +14,7 @@ const Logos = () => {
 
     useEffect( () => {
         if ( !isHome ) {
-            const timer = setTimeout( () => setShowVision( true ), 400 );
+            const timer = setTimeout( () => setShowVision( true ), 300 );
             return () => clearTimeout( timer );
         } else {
             setShowVision( false );
@@ -23,7 +23,7 @@ const Logos = () => {
 
     useEffect( () => {
         const handleScroll = () => {
-            const secondSectionOffset = window.innerHeight * 0.9;
+            const secondSectionOffset = window.innerHeight * 0.7;
             setShowMobileElements( window.scrollY > secondSectionOffset );
         };
 
@@ -70,6 +70,9 @@ const Logos = () => {
                 </h1>
             </div>
 
+            <div className={`lg:hidden fixed bg-[rgba(217,217,217,0.1)] backdrop-blur-[30px] w-full h-[14vh] top-0 z-40
+                ${showMobileElements ? "opacity-100" : "opacity-0 pointer-events-none"}
+                `}></div>
             <div
                 className={ `fixed top-[1.2rem] left-[1.25rem] flex items-center gap-1 lg:hidden transition-opacity duration-500 z-50
                     ${showMobileElements ? "opacity-100" : "opacity-0 pointer-events-none"}
