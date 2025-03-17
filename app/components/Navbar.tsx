@@ -42,7 +42,7 @@ const Navbar = () => {
     const isServicesActive = [ "الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية" ].includes( activeSection );
 
     return (
-        <nav className="fixed lg:top-[5.25rem] left-0 w-full z-50 px-[6.3rem] ">
+        <nav className="fixed lg:top-[5.25rem] left-0 w-full z-40 px-[6.3rem] ">
             <div
                 className={ `fixed transition-all duration-500 hidden lg:block ${isHome
                     ? "-top-[12rem] -left-[12rem] transform opacity-100 animate-floatRotate"
@@ -52,9 +52,9 @@ const Navbar = () => {
                 <Image src={ Animation } alt="Logo-herfa" className="transition-all duration-500" />
             </div>
 
-            <div className="lg:hidden fixed top-9 right-6 z-50">
+            <div className="lg:hidden fixed top-6 right-4 z-50">
                 <button onClick={ () => setIsOpen( !isOpen ) } className="text-white text-3xl">
-                    { isOpen ? <FaTimes /> : <CgMenuGridO size={ 45 } /> }
+                    { isOpen ? <FaTimes /> : <CgMenuGridO size={ 35 } /> }
                 </button>
             </div>
 
@@ -76,10 +76,10 @@ const Navbar = () => {
             </ul>
 
             <div
-                className={ `fixed inset-0 bg-secondary bg-opacity-[0.97] transition-transform flex flex-col items-center justify-center duration-300 space-y-44
+                className={ `fixed inset-0 bg-secondary bg-opacity-[0.98] transition-transform flex flex-col items-center justify-between duration-300 py-10
                     ${isOpen ? "translate-x-0" : "translate-x-full"} lg:hidden` }
             >
-                <div className="flex flex-col items-center justify-center space-y-6">
+                <div className="flex flex-col items-center justify-center space-y-6 mt-36">
 
                     { sections.map( ( section ) => (
                         <button

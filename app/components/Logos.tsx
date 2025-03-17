@@ -2,7 +2,6 @@
 import { useSectionStore } from "@/lib/store";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
 import Line from "@/public/line.svg";
 import Logo from "@/public/logo-herfa.svg";
 import Vision from "@/public/vision.svg";
@@ -70,17 +69,17 @@ const Logos = () => {
                 </h1>
             </div>
 
-            <div className={`lg:hidden fixed bg-[rgba(217,217,217,0.1)] backdrop-blur-[30px] w-full h-[14vh] top-0 z-40
+            <div className={`lg:hidden fixed bg-[rgba(217,217,217,0.1)] backdrop-blur-[30px] w-full h-[10vh] top-0 z-30
                 ${showMobileElements ? "opacity-100" : "opacity-0 pointer-events-none"}
                 `}></div>
             <div
-                className={ `fixed top-[1.2rem] left-[1.25rem] flex items-center gap-1 lg:hidden transition-opacity duration-500 z-50
+                className={ `fixed top-[0.8rem] left-[0.8rem] flex items-center gap-1 lg:hidden transition-opacity duration-500 z-40
                     ${showMobileElements ? "opacity-100" : "opacity-0 pointer-events-none"}
                 `}
             >
-                <Image src={ Vision } alt="Vision-2030" className="w-[60px] h-auto opacity-100 transition-all duration-700" />
-                <Image src={ Line } alt="line" className="w-[30px] h-[10vh] opacity-100 transition-all duration-500" />
-                <Image src={ Logo } alt="Logo-herfa" width={ 40 } height={ 40 } className="w-[30px] h-auto transition-all duration-500" />
+                <Image src={ Vision } alt="Vision-2030" className="w-[45px] h-auto opacity-100 transition-all duration-700" />
+                <Image src={ Line } alt="line" className="w-[20px] h-[7vh] opacity-100 transition-all duration-500" />
+                <Image src={ Logo } alt="Logo-herfa" width={ 40 } height={ 40 } className="w-[20px] h-auto transition-all duration-500" />
             </div>
         </>
     );
