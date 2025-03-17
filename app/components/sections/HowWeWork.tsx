@@ -41,7 +41,7 @@ const HowWeWork = () => {
 
   return (
     <section id="آلية-عملنا" 
-      className="h-screen w-full lg:w-[184vw] xl:w-[178vw] 2xl:w-[158vw] 3xl:w-[151vw] lg:bg-transparent
+      className="h-[80vh] lg:h-screen w-full lg:w-[184vw] xl:w-[178vw] 2xl:w-[158vw] 3xl:w-[151vw] lg:bg-transparent
       flex justify-center items-center gap-12 lg:gap-10 xl:gap-16 2xl:gap-24 3xl:gap-48
       flex-col lg:flex-row 
       ">
