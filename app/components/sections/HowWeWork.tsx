@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
+import Card from "../Card";
 import Description from "../Description";
 import Title from "../Title";
-import Card from "../Card";
 
 import Fifth from '@/public/howwework/fifth.svg';
 import First from '@/public/howwework/first.svg';
@@ -14,19 +14,30 @@ import Seventh from '@/public/howwework/seventh.svg';
 import Sixth from '@/public/howwework/sixth.svg';
 import Third from '@/public/howwework/third.svg';
 
+import MbFifth from '@/public/howwework/mobilefifth.svg';
+import MbFirst from '@/public/howwework/mobilefirst.svg';
+import MbFourth from '@/public/howwework/mobilefourth.svg';
+import MbSecond from '@/public/howwework/mobilesecond.svg';
+import MbSeventh from '@/public/howwework/mobileseventh.svg';
+import MbSixth from '@/public/howwework/mobilesixth.svg';
+import MbThird from '@/public/howwework/mobilethird.svg';
+
+
 interface SliderItem {
   content: string;
-  src: StaticImageData;
+  desktopSrc: StaticImageData;
+  mobileSrc: StaticImageData;
 }
 
+
 const initialSliderContent: SliderItem[] = [
-  { content: "فهم ومعرفة الفكرة", src: First },
-  { content: "التحليل العميق", src: Second },
-  { content: "التخطيط المنظم", src: Third },
-  { content: "التصميم والبناء", src: Fourth },
-  { content: "التنفيذ", src: Fifth },
-  { content: "الاختبـــار", src: Sixth },
-  { content: "المتابعة والتقيم", src: Seventh },
+  { content: "فهم ومعرفة الفكرة", desktopSrc: First, mobileSrc: MbFirst },
+  { content: "التحليل العميق", desktopSrc: Second, mobileSrc: MbSecond },
+  { content: "التخطيط المنظم", desktopSrc: Third, mobileSrc: MbThird },
+  { content: "التصميم والبناء", desktopSrc: Fourth, mobileSrc: MbFourth },
+  { content: "التنفيذ", desktopSrc: Fifth, mobileSrc: MbFifth },
+  { content: "الاختبـــار", desktopSrc: Sixth, mobileSrc: MbSixth },
+  { content: "المتابعة والتقيم", desktopSrc: Seventh, mobileSrc: MbSeventh },
 ];
 
 const HowWeWork = () => {
@@ -38,8 +49,8 @@ const HowWeWork = () => {
       return [ ...rest, first ];
     } );
   };
-  let titleColor = "text-secondary lg:text-active"
-  let descriptionColor = "text-active lg:text-primary"
+  const titleColor = "text-secondary lg:text-active"
+  const descriptionColor = "text-active lg:text-primary"
 
   return (
     <section id="آلية-عملنا"
@@ -71,7 +82,7 @@ const HowWeWork = () => {
             layout
             transition={ { type: "spring", stiffness: 100, damping: 10 } }
           >
-            { sliderContent.map( ( { content, src } ) => (
+            { sliderContent.map( ( { content, desktopSrc, mobileSrc } ) => (
               <motion.div
                 key={ content }
                 layout
@@ -79,7 +90,7 @@ const HowWeWork = () => {
                 animate={ { opacity: [ 1, 0, 0.1, 1 ] } }
                 transition={ { duration: 2 } }
               >
-                <Card text={ content } srcImage={ src } isService={ false } />
+                <Card text={ content } srcImage={ desktopSrc } mobileSrc={ mobileSrc } isService={ false } />
               </motion.div>
             ) ) }
           </motion.div>
