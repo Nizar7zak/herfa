@@ -13,6 +13,7 @@ const TechnicalServices = () => {
             title="الخــدمــات التقنيــــة"
             description="لأن كل نشاط تجاري غير موجود على الانترنت، فهو ذاهب للتلاشي لا محالة... نقدم خدماتنا التقنية التالية:"
             cards={ technicalCards }
+            isTechnical={true}
         />
     );
 };
