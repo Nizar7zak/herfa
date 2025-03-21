@@ -15,7 +15,8 @@ const Card = ( { text, srcImage, isService, mobileSrc }: Props ) => {
     return (
         <div className={ `${bgColor} 
             w-[36vw] h-[26vh] mx-5 md:mx-0
-            md:w-[15vw] md:h-[20vh] lg:w-[11vw] lg:h-[20vh] xl:h-[29vh] 2xl:w-[11vw] 2xl:h-[32vh]  
+            ${isService ? " md:w-[15vw] md:h-[20vh] " : "md:w-[11vw]  md:h-[15vh]" }
+            lg:w-[11vw] lg:h-[20vh] xl:h-[29vh] 2xl:w-[11vw] 2xl:h-[32vh]  
             rounded-lg flex flex-col justify-center items-center gap-6 xl:gap-8 2xl:gap-10 py-14 `}>
 
             <Image
@@ -31,7 +32,7 @@ const Card = ( { text, srcImage, isService, mobileSrc }: Props ) => {
                     alt="icon How We Work"
                     src={ mobileSrc! }
                     width={ 30 } height={ 30 }
-                    className="w-[60%] lg:w-[55%] xl:w-[67%] 2xl:w-[62%] h-auto lg:hidden block"
+                    className="w-[60%] md:w-[50%] lg:w-[55%] xl:w-[67%] 2xl:w-[62%] h-auto lg:hidden block"
                     unoptimized
                 />
 

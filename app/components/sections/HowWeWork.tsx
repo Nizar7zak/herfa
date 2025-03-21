@@ -1,5 +1,5 @@
 import Naksha from '@/public/aboveHowWeWork.svg';
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 import Card from "../Card";
@@ -43,6 +43,8 @@ const initialSliderContent: SliderItem[] = [
 
 const HowWeWork = () => {
   const [ sliderContent, setSliderContent ] = useState( initialSliderContent );
+  const [ xOffset, setXOffset ] = useState( 0 );
+  const x = useMotionValue( xOffset );
 
   const handleImageClick = () => {
     setSliderContent( ( prev ) => {
@@ -85,7 +87,7 @@ const HowWeWork = () => {
           onClick={ handleImageClick }
         />
 
-        <div className="flex flex-col p-3">
+        <div className="hidden md:flex flex-col p-3">
           <motion.div
             className="flex justify-between items-center gap-6 xl:gap-8 2xl:gap-10 -mt-6"
             layout
@@ -104,6 +106,25 @@ const HowWeWork = () => {
             ) ) }
           </motion.div>
         </div>
+        <div className="md:hidden">
+          <motion.div
+            className="flex justify-between items-center "
+            drag="x"
+            style={ { x } }
+            dragConstraints={ { left: -470, right: 470 } }
+            onDragEnd={ () => setXOffset( x.get() ) }
+            whileTap={ { cursor: "grabbing" } }
+            transition={ { ease: "easeOut", duration: 0.4 } }
+          >
+            { initialSliderContent.map( ( { content, mobileSrc } ) => (
+              <Card key={ content } text={ content } srcImage={ mobileSrc } mobileSrc={ mobileSrc } isService={ false } />
+            ) ) }
+          </motion.div>
+
+        </div>
+
+
+
       </div>
     </section>
   );
