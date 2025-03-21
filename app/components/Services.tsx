@@ -27,9 +27,10 @@ const ServiceSection = ( { id, title, description, cards, isTechnical = false }:
           <Card key={ id } text={ label } srcImage={ src } isService />
         ) ) }
       </div>
-      <div className="border-4 border-active rounded-lg">
+
+      <div className="md:hidden border-4 border-active rounded-lg">
         <motion.div
-          className="flex md:hidden justify-between items-center "
+          className="flex justify-between items-center "
           drag="x"
           style={ { x } }
           dragConstraints={ { left: isTechnical ? -100 : -300, right: isTechnical ? 100 : 300 } }
