@@ -15,14 +15,14 @@ const Card = ( { text, srcImage, isService, mobileSrc }: Props ) => {
     return (
         <div className={ `${bgColor} 
             w-[36vw] h-[26vh]
-            md:w-[15vw] md:h-[23vh] lg:w-[11vw] lg:h-[22vh] xl:h-[29vh] 2xl:w-[11vw] 2xl:h-[32vh]  
+            md:w-[15vw] md:h-[20vh] lg:w-[11vw] lg:h-[20vh] xl:h-[29vh] 2xl:w-[11vw] 2xl:h-[32vh]  
             rounded-lg flex flex-col justify-center items-center gap-6 xl:gap-8 2xl:gap-10 py-14 `}>
 
             <Image
-                alt="icon How We Work"
+                alt="service"
                 src={ srcImage }
                 width={ 30 } height={ 30 }
-                className={ `w-[72%] xl:w-[67%] 2xl:w-[62%] h-auto ${cardApperance}` }
+                className={ `w-[60%] lg:w-[55%] xl:w-[67%] 2xl:w-[62%] h-auto ${cardApperance}` }
                 unoptimized
             />
             {
@@ -31,13 +31,13 @@ const Card = ( { text, srcImage, isService, mobileSrc }: Props ) => {
                     alt="icon How We Work"
                     src={ mobileSrc! }
                     width={ 30 } height={ 30 }
-                    className=" w-[72%] xl:w-[67%] 2xl:w-[62%] h-auto lg:hidden block"
+                    className="w-[60%] lg:w-[55%] xl:w-[67%] 2xl:w-[62%] h-auto lg:hidden block"
                     unoptimized
                 />
 
             }
 
-            <h1 className={ `text-sm xl:text-base  text-center ${textColor} w-[90%]  flex-1` }>{ text }</h1>
+            <h1 className={ `text-[12px] xl:text-base  text-center ${textColor} w-[90%] flex-1` }>{ text }</h1>
         </div>
     )
 }
