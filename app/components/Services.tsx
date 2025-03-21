@@ -12,7 +12,7 @@ interface ServiceSectionProps {
 const ServiceSection = ({ id, title, description, cards }: ServiceSectionProps) => {
   return (
     <section id={id} className="h-[63vh] lg:h-screen flex flex-col justify-center items-center gap-10 xl:gap-14 2xl:gap-16">
-      <div className="space-y-4 w-[75%] lg:w-[42%] flex flex-col justify-center items-center">
+      <div className="space-y-4 w-[90%] md:w-[75%] lg:w-[42%] flex flex-col justify-center items-center">
         <Title text={title} />
         <Description textPosition="center" text={description} />
       </div>
