@@ -9,7 +9,7 @@ interface Props {
 
 const MemberCard = ( { fullName, src, jobDescription, skillsIcons }: Props ) => {
   return (
-    <div className="flex w-[80%] md:w-[40%] lg:w-[35%] justify-center items-center ">
+    <div className="flex w-[80%] md:w-[60%] lg:w-[35%] justify-center items-center ">
       <div className="w-[24vw] h-[24vw] lg:w-[14vw] lg:h-[14vw] xl:w-[12vw] xl:h-[12vw] rounded-full bg-slate-300 overflow-hidden ml-6">
         <Image alt="team member picture" src={ src } />
       </div>
