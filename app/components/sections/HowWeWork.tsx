@@ -58,7 +58,7 @@ const HowWeWork = () => {
       className=" 
       shadow-2xl shadow-black/50 lg:shadow-none relative
     bg-primary mt-56 mb-16 rounded-[3rem] lg:rounded-none
-      h-[65vh] lg:h-screen w-full lg:w-[184vw] xl:w-[157vw] 
+      h-[65vh] lg:h-screen w-full lg:w-[175vw] xl:w-[157vw] 
       2xl:w-[158vw] 3xl:w-[151vw] lg:bg-transparent
       flex justify-start lg:justify-center items-center 
       gap-16 lg:gap-10 xl:gap-16 2xl:gap-24 3xl:gap-48
