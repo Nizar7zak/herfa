@@ -26,16 +26,16 @@ const models = [
 
 const experinces = [
     { id: 1, src: naksha, alt: "naksha" },
-    { id: 2, src: basma, alt: "basma" },
-    { id: 3, src: ghoraz, alt: "ghoraz" },
-    { id: 4, src: gheraz, alt: "gheraz" },
-    { id: 5, src: sheem, alt: "sheem" },
-    { id: 6, src: crete, alt: "crete" },
-    { id: 7, src: owhag, alt: "owhag" },
-    { id: 8, src: moonTouch, alt: "moontouch" },
-    { id: 9, src: kharoufAlreef, alt: "kharuof al reef" },
-    { id: 10, src: amantak, alt: "amantak" },
-    { id: 11, src: mentad, alt: "mentad" },
+    { id: 2, src: ghoraz, alt: "ghoraz" },
+    { id: 3, src: gheraz, alt: "gheraz" },
+    { id: 4, src: sheem, alt: "sheem" },
+    { id: 5, src: crete, alt: "crete" },
+    { id: 6, src: owhag, alt: "owhag" },
+    { id: 7, src: moonTouch, alt: "moontouch" },
+    { id: 8, src: amantak, alt: "amantak" },
+    { id: 9, src: basma, alt: "basma" },
+    { id: 10, src: mentad, alt: "mentad" },
+    { id: 11, src: kharoufAlreef, alt: "kharuof al reef" },
 ]
 
 const OurExperince = () => {
