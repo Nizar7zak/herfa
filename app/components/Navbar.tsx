@@ -76,7 +76,7 @@ const Navbar = () => {
             </ul>
 
             <div
-                className={ `fixed inset-0 bg-secondary bg-opacity-[0.98] transition-transform flex flex-col items-center justify-between duration-300 py-10
+                className={ `fixed inset-0 bg-secondary  transition-transform flex flex-col items-center justify-between duration-300 py-10
                     ${isOpen ? "translate-x-0" : "translate-x-full"} lg:hidden` }
             >
                 <div className="flex flex-col items-center justify-center space-y-6 mt-36">

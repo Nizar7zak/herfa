@@ -35,9 +35,9 @@ const ContactUs = () => {
 
             <div className='my-8 flex flex-col gap-4 lg:hidden'>
                 <SocialIcons />
-                <Description
-                    textPosition='center'
-                    text='جميع الحقوق محفوظة 2025' />
+                <h3 className='text-center text-[12px]'>
+                جميع الحقوق محفوظة 2025
+                </h3>
             </div>
         </section>
     )

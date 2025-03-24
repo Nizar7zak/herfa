@@ -43,7 +43,7 @@ const initialSliderContent: SliderItem[] = [
 
 const HowWeWork = () => {
   const [ sliderContent, setSliderContent ] = useState( initialSliderContent );
-  const [ xOffset, setXOffset ] = useState( 0 );
+  const [ xOffset, setXOffset ] = useState( -470 );
   const x = useMotionValue( xOffset );
 
   const handleImageClick = () => {

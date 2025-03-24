@@ -4,7 +4,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #462A5A;
+  --foreground: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,6 +20,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+html {
+  color-scheme: light !important;
+}
 
 @media (min-width: 1024px) {
   html, body {

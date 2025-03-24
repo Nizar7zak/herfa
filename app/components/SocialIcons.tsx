@@ -1,13 +1,11 @@
 "use client";
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaBehance, FaXTwitter, FaTiktok } from "react-icons/fa6";
+import { FaInstagram, FaLinkedinIn, FaBehance, FaTiktok } from "react-icons/fa6";
 
 const SocialIcons = () => {
   const icons = [
     { id: "instagram", icon: <FaInstagram />, link: "#" },
-    { id: "facebook", icon: <FaFacebookF />, link: "#" },
     { id: "linkedin", icon: <FaLinkedinIn />, link: "#" },
     { id: "behance", icon: <FaBehance />, link: "#" },
-    { id: "twitter", icon: <FaXTwitter />, link: "#" },
     { id: "tiktok", icon: <FaTiktok />, link: "#" },
   ];
 
