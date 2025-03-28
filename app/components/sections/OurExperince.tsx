@@ -115,7 +115,12 @@ const OurExperince = () => {
                     ) }
                 </AnimatePresence>
             </div>
+            <iframe
+                src="https://www.behance.net/embed/project/222233651?ilo0=1"
+                height="316" width="404"
+                allowFullScreen frameBorder="0" allow="clipboard-write" referrerPolicy="strict-origin-when-cross-origin">
 
+            </iframe>
             <div className="flex lg:w-[70%] xl:w-[85%] items-center justify-center lg:gap-6 xl:gap-10 gap-x-5 gap-y-3 md:gap-x-16 md:gap-y-6 flex-wrap w-[85%]">
                 { experinces.map( ( { id, src, alt } ) => <Image key={ id } alt={ alt } src={ src } className="w-[12%] md:w-[7%] lg:w-[5%] xl:w-[4%]" /> ) }
             </div>
