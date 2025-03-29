@@ -71,7 +71,7 @@ const OurExperince = () => {
                     { projectsOnBehance.map( ( { id, src } ) => (
                         <div
                             key={ id }
-                            className="w-full h-[35vh] md:w-[75vw] md:h-[45vh] lg:w-[30vw] lg:h-[25vh] xl:w-[22vw] xl:h-[24vh]
+                            className="w-full h-[35vh] md:w-[75vw] md:h-[45vh] lg:w-[23vw] lg:h-[20vh] xl:w-[22vw] xl:h-[24vh]
                             rounded-xl cursor-pointer overflow-hidden bg-slate-300"
                         >
                             <iframe
