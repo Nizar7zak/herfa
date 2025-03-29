@@ -5,7 +5,7 @@ import Title from '../Title'
 
 const AboutUs = () => {
   return (
-    <section id="من-نحن" className="h-screen flex justify-center items-center gap-6 lg:gap-24 flex-col lg:flex-row">
+    <section id="من-نحن" className="h-[80v] mt-10 md:mt-0 lg:h-screen flex justify-center items-center gap-6 lg:gap-24 flex-col lg:flex-row">
 
       <div className="w-[90%] lg:w-[25%] 2xl:w-[28%] flex justify-center items-center">
         <Image src={ AboutUsPic } alt="من نحن" />
