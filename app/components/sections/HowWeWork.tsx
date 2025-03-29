@@ -111,7 +111,7 @@ const HowWeWork = () => {
             className="flex justify-between items-center "
             drag="x"
             style={ { x } }
-            dragConstraints={ { left: -470, right: 400 } }
+            dragConstraints={ { left: -470, right: 470 } }
             onDragEnd={ () => setXOffset( x.get() ) }
             whileTap={ { cursor: "grabbing" } }
             transition={ { ease: "easeOut", duration: 0.4 } }
