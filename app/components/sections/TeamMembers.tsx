@@ -58,7 +58,7 @@ const TeamMembers = () => {
         { 
             fullName: "سليم الحسنات", 
             src: Salim, 
-            jobDescription: "تصميم الجرافيكي | تصميم المطبوعات", 
+            jobDescription: "تصوير | تسويق إلكتروني", 
             skillsIcons: [ 
                 Fifth, 
                 Second, 
