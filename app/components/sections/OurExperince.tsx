@@ -1,6 +1,3 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
 import amantak from '@/public/experince/amantak.svg';
 import basma from '@/public/experince/basma.svg';
 import crete from '@/public/experince/cret.svg';
@@ -41,20 +38,6 @@ const experinces = [
 ]
 
 const OurExperince = () => {
-
-
-    const [ isLgScreen, setIsLgScreen ] = useState( false );
-
-    useEffect( () => {
-        const updateSize = () => {
-            setIsLgScreen( window.innerWidth >= 1024 );
-        };
-
-        updateSize();
-        window.addEventListener( "resize", updateSize );
-
-        return () => window.removeEventListener( "resize", updateSize );
-    }, [] );
 
 
     return (
