@@ -51,22 +51,22 @@ const OurExperince = () => {
 
                 <div className="flex justify-center items-center flex-col flex-wrap gap-10 lg:gap-6 xl:gap-7 
                 w-[90%] lg:w-[70%] lg:h-[55vh] xl:w-[70%] xl:h-[58vh]">
-    {projectsOnBehance.map(({ id, src }) => (
-        <div
-            key={id}
-            className="relative w-full h-[35vh] md:w-[75vw] md:h-[45vh] lg:w-[23vw] lg:h-[20vh] xl:w-[23vw] xl:h-[25vh]
+                    { projectsOnBehance.map( ( { id, src } ) => (
+                        <div
+                            key={ id }
+                            className="relative w-full h-[35vh] md:w-[75vw] md:h-[45vh] lg:w-[23vw] lg:h-[20vh] xl:w-[23vw] xl:h-[25vh]
             rounded-xl cursor-pointer overflow-hidden bg-slate-300"
-        >
-            <iframe
-                className="absolute inset-0 w-full h-full"
-                src={src}
-                allowFullScreen
-                scrolling="no" 
-                style={{ border: "none", overflow: "hidden" }}
-            ></iframe>
-        </div>
-    ))}
-</div>
+                        >
+                            <iframe
+                                className="absolute inset-0 w-full h-full"
+                                src={ src }
+                                allowFullScreen
+                                scrolling="no"
+                                style={ { border: "none", overflow: "hidden" } }
+                            ></iframe>
+                        </div>
+                    ) ) }
+                </div>
 
 
             </div>
