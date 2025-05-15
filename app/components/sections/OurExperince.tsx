@@ -49,26 +49,26 @@ const OurExperince = () => {
                     <Description textPosition="center" text="فريق مبدع ومحترف في الدعاية، الإعلان، والتسويق، يجمعنا الشغف والالتزام بتحقيق أهدافكم بحلول مبتكرة ومتكاملة." />
                 </div>
 
-                <div className="flex justify-center items-center  flex-col flex-wrap gap-10  lg:gap-6 xl:gap-7 
-                    w-[90%] lg:w-[70%] lg:h-[55vh] xl:w-[70%] xl:h-[58vh]">
-                    { projectsOnBehance.map( ( { id, src } ) => (
-                        <div
-                            key={ id }
-                            className="w-full h-[35vh] md:w-[75vw] md:h-[45vh] lg:w-[23vw] lg:h-[20vh] xl:w-[22vw] xl:h-[24vh]
-                            rounded-xl cursor-pointer overflow-hidden bg-slate-300"
-                        >
-                            <iframe
-                                className="w-full h-full"
-                                src={ src }
-                                loading="lazy"
-                                allowFullScreen
-                            >
-                            </iframe>
-                        </div>
+                <div className="flex justify-center items-center flex-col flex-wrap gap-10 lg:gap-6 xl:gap-7 
+                w-[90%] lg:w-[70%] lg:h-[55vh] xl:w-[70%] xl:h-[58vh]">
+    {projectsOnBehance.map(({ id, src }) => (
+        <div
+            key={id}
+            className="relative w-full h-[35vh] md:w-[75vw] md:h-[45vh] lg:w-[23vw] lg:h-[20vh] xl:w-[23vw] xl:h-[25vh]
+            rounded-xl cursor-pointer overflow-hidden bg-slate-300"
+        >
+            <iframe
+                className="absolute inset-0 w-full h-full"
+                src={src}
+                allowFullScreen
+                scrolling="no" 
+                style={{ border: "none", overflow: "hidden" }}
+            ></iframe>
+        </div>
+    ))}
+</div>
 
 
-                    ) ) }
-                </div>
             </div>
 
             <div className="flex lg:w-[70%] xl:w-[85%] items-center justify-center lg:gap-6 xl:gap-10 gap-x-5 gap-y-3 md:gap-x-16 md:gap-y-6 flex-wrap w-[85%]">

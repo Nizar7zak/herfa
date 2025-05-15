@@ -24,7 +24,8 @@ const Card = ( { text, srcImage, isService, mobileSrc }: Props ) => {
                 src={ srcImage }
                 width={ 30 } height={ 30 }
                 className={ `w-[60%] lg:w-[55%] xl:w-[67%] 2xl:w-[62%] h-auto ${cardApperance}` }
-                unoptimized
+
+                
             />
             {
                 !isService &&
@@ -33,7 +34,8 @@ const Card = ( { text, srcImage, isService, mobileSrc }: Props ) => {
                     src={ mobileSrc! }
                     width={ 30 } height={ 30 }
                     className="w-[60%] md:w-[50%] lg:w-[55%] xl:w-[67%] 2xl:w-[62%] h-auto lg:hidden block"
-                    unoptimized
+    
+                    
                 />
 
             }
