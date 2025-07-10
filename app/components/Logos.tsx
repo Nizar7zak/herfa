@@ -43,7 +43,6 @@ const Logos = () => {
                     { !isHome && (
                         <div className="flex justify-between items-center">
                             <Image
-                                priority
                                 src={ Vision }
                                 alt="Vision-2030"
                                 className={ `transition-all duration-700 ease-in-out 
@@ -53,7 +52,6 @@ const Logos = () => {
                         </div>
                     ) }
                     <Image
-                        priority
                         src={ Logo }
                         alt="Logo-herfa"
                         width={ 100 }
@@ -79,9 +77,9 @@ const Logos = () => {
                     ${showMobileElements ? "opacity-100" : "opacity-0 pointer-events-none"}
                 `}
             >
-                <Image src={ Vision } alt="Vision-2030" className="w-[45px] h-auto opacity-100 transition-all duration-700" priority/>
-                <Image src={ Line } alt="line" className="w-[20px] h-[7vh] opacity-100 transition-all duration-500" priority/>
-                <Image src={ Logo } alt="Logo-herfa" width={ 40 } height={ 40 } className="w-[20px] h-auto transition-all duration-500" priority/>
+                <Image src={ Vision } alt="Vision-2030" className="w-[45px] h-auto opacity-100 transition-all duration-700" />
+                <Image src={ Line } alt="line" className="w-[20px] h-[7vh] opacity-100 transition-all duration-500" />
+                <Image src={ Logo } alt="Logo-herfa" width={ 40 } height={ 40 } className="w-[20px] h-auto transition-all duration-500" />
             </div>
         </>
     );

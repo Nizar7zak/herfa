@@ -66,7 +66,7 @@ const HowWeWork = () => {
       gap-16 lg:gap-10 xl:gap-16 2xl:gap-24 3xl:gap-48
       flex-col lg:flex-row py-16 lg:py-0 ">
       <div className="absolute -top-80 -left-52 opacity-15 -z-10 lg:hidden">
-        <Image alt="Naksha" src={ Naksha } priority />
+        <Image alt="Naksha" src={ Naksha }  />
       </div>
       <div>
         <div className="w-full flex flex-col space-y-4 justify-center items-center lg:justify-start lg:items-start">
@@ -85,7 +85,7 @@ const HowWeWork = () => {
           alt="right"
           className="cursor-pointer transition-transform duration-100 hover:scale-120 hidden lg:block "
           onClick={ handleImageClick }
-          priority
+          
         />
 
         <div className="hidden md:flex flex-col p-3">
