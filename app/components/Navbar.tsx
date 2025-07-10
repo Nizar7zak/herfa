@@ -49,7 +49,7 @@ const Navbar = () => {
                     : "-top-[25rem] -left-[25rem] transform opacity-0"
                     }` }
             >
-                <Image src={ Animation } alt="Logo-herfa" className="transition-all duration-500" />
+                <Image src={ Animation } alt="Logo-herfa" className="transition-all duration-500" priority/>
             </div>
 
             <div className="lg:hidden fixed top-6 right-4 z-50">

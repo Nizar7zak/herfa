@@ -16,8 +16,8 @@ const FloatingArt = () => {
           ease: "linear",
         } }
       >
-        <Image alt="زخرفة 1" src={ ArtSide } />
-        <Image alt="زخرفة 2" src={ ArtSide } className={ "-my-3" } />
+        <Image alt="زخرفة 1" src={ ArtSide } priority/>
+        <Image alt="زخرفة 2" src={ ArtSide } className={ "-my-3" } priority />
       </motion.div>
     </div>
   );
