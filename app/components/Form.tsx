@@ -22,22 +22,42 @@ const Form = () => {
         resolver: zodResolver( authSchema )
     } )
 
-    const onSubmit = handleSubmit( async ( { email, name, message, phone } ) => {
-        try {
-            console.log( email, name, message, phone )
+    // const onSubmit = handleSubmit( async ( { email, name, message, phone } ) => {
+    //     try {
+    //         console.log( email, name, message, phone )
 
-        }catch (error) {
-            if (axios.isAxiosError(error)) {
-                console.error('Axios Error:', error.response?.data || error.message);
-                setError(error.response?.data?.message || 'Something went wrong');
+    //     }catch (error) {
+    //         if (axios.isAxiosError(error)) {
+    //             console.error('Axios Error:', error.response?.data || error.message);
+    //             setError(error.response?.data?.message || 'Something went wrong');
+    //         } else {
+    //             console.error('Unexpected Error:', error);
+    //             setError('An unexpected error occurred');
+    //         }
+    //     } finally {
+    //         setIsSubmitting(false);
+    //     }
+    // } )
+
+    const onSubmit = handleSubmit( async ( formData ) => {
+        try {
+            setIsSubmitting( true );
+            setError( '' );
+
+            await axios.post( '/api/contact', formData );
+
+            alert( 'تم إرسال رسالتك بنجاح! شكراً لتواصلك.' );
+
+        } catch ( error ) {
+            if ( axios.isAxiosError( error ) ) {
+                setError( error.response?.data?.message || 'حدث خطأ ما أثناء الإرسال' );
             } else {
-                console.error('Unexpected Error:', error);
-                setError('An unexpected error occurred');
+                setError( 'حدث خطأ غير متوقع أثناء الإرسال' );
             }
         } finally {
-            setIsSubmitting(false);
+            setIsSubmitting( false );
         }
-    } )
+    } );
 
     return (
 
@@ -92,7 +112,10 @@ const Form = () => {
             <button
                 type="submit"
                 disabled={ isSubmitting }
-                className="w-full lg:w-[40%] py-4 bg-active hover:bg-primary  text-primary hover:text-secondary hover:text-secondaryt font-bold rounded-md transition-colors duration-300 disabled:opacity-50"
+                className="
+                    w-full lg:w-[40%] py-4 bg-active hover:bg-primary  text-primary hover:text-secondary 
+                    hover:text-secondaryt font-bold rounded-md transition-colors duration-300 disabled:opacity-50
+                "
             >
                 إرســــــــال
             </button>
