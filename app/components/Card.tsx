@@ -9,7 +9,7 @@ interface Props {
 
 const Card = ( { text, srcImage, isService, mobileSrc }: Props ) => {
     const bgColor = isService ? 'bg-[rgba(217,217,217,0.05)] backdrop-blur-[10px] inset-[0_0_7.8px_rgba(217,217,217,0.078)] scale-110' : 'bg-secondary lg:bg-primary';
-    const textColor = `text-primary ${isService ? "" : "lg:text-secondary"}`;
+    const textColor = ` ${isService ? "text-active" : "text-primary lg:text-secondary"}`;
     const cardApperance = isService ? "block" : "hidden lg:block"
 
     return (
@@ -36,7 +36,7 @@ const Card = ( { text, srcImage, isService, mobileSrc }: Props ) => {
 
             }
 
-            <h1 className={ `text-[12px] xl:text-base  text-center ${textColor} w-[90%] flex-1` }>{ text }</h1>
+            <h1 className={ `text-[12px] xl:text-base  text-center ${textColor} font-semibold w-[90%] flex-1` }>{ text }</h1>
         </div>
     )
 }
