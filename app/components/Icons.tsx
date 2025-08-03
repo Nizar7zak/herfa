@@ -10,7 +10,7 @@ const Icons = () => {
         <div className="fixed bottom-[2.5rem] left-12 lg:left-0 w-full flex items-center justify-center px-[5.8rem] gap-4 z-50">
             <div className="flex-1 flex justify-start">
                 <a
-                    href="https://wa.me/972598687226"
+                    href="https://wa.me/905376033936"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
