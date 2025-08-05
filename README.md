@@ -24,7 +24,4 @@ The goal of **Herfa** is to creatively present our startup and services to the S
 
 Visit the live version here: [https://www.herfa.net/](https://www.herfa.net/)
 
-## 📁 Folder Structure (Optional)
-
-You can add a basic project structure here if needed, such as:
 
