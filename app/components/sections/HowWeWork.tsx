@@ -33,7 +33,7 @@ interface SliderItem {
 
 
 const HowWeWork = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [ sliderContent, setSliderContent ] = useState<SliderItem[]>([]);
 
   useEffect(() => {
@@ -73,7 +73,7 @@ const HowWeWork = () => {
       <div className="absolute -top-80 -left-52 opacity-15 -z-10 lg:hidden">
         <Image alt="Naksha" src={ Naksha }  />
       </div>
-      <div>
+      <div className={`${lang === 'ar' ? 'lg:mr-16 xl:mr-20 2xl:mr-24' : 'lg:ml-24 xl:ml-40 2xl:ml-48'}`}>
         <div className="w-full flex flex-col space-y-4 justify-center items-center lg:justify-start lg:items-start">
           <Title text={t('process.title')} textColor={ titleColor } />
           <Description text={t('process.desc')}

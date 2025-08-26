@@ -40,9 +40,8 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLang] = useState<Language>("ar");
   const [theme, setTheme] = useState<Theme>("light");
   const [messages, setMessages] = useState<Messages>({});
-  const [mounted, setMounted] = useState(false); // avoid SSR flash
+  const [mounted, setMounted] = useState(false); 
 
-  // Initialize language and theme from localStorage or browser
   useEffect(() => {
     const fromStorage = (typeof window !== "undefined" && localStorage.getItem(STORAGE_KEY)) as Language | null;
     const themeFromStorage = (typeof window !== "undefined" && localStorage.getItem(THEME_STORAGE_KEY)) as Theme | null;
@@ -51,7 +50,6 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     setMounted(true);
   }, []);
 
-  // Update messages and html attributes
   useEffect(() => {
     if (!mounted) return;
 
@@ -65,9 +63,9 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     html.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
 
     if (theme === "dark") {
-      html.classList.add("dark");
+      html.setAttribute("data-theme", "dark");
     } else {
-      html.classList.remove("dark");
+      html.removeAttribute("data-theme");
     }
   }, [lang, theme, mounted]);
 
@@ -83,7 +81,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     toggleTheme: () => setTheme(prev => (prev === "light" ? "dark" : "light")),
   }), [lang, theme, t]);
 
-  if (!mounted) return null; // prevent hydration mismatch
+  if (!mounted) return null;
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }

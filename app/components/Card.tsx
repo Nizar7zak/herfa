@@ -15,8 +15,8 @@ const Card = ( { text, srcImage, isService, mobileSrc }: Props ) => {
     return (
         <div className={ `${bgColor}
             w-[36vw] h-[26vh] mx-5 md:mx-0
-            ${isService ? " md:w-[15vw] md:h-[20vh] " : "md:w-[11vw] md:h-[15vh]"}
-            lg:w-[11vw] lg:h-[20vh] xl:h-[29vh] 2xl:w-[11vw] 2xl:h-[32vh]
+            ${isService ? " md:w-[15vw] md:h-[20vh] " : "md:w-[13vw] md:h-[18vh]"}
+            lg:w-[13vw] lg:h-[22vh] xl:h-[32vh] 2xl:w-[13vw] 2xl:h-[35vh]
             rounded-lg flex flex-col justify-center items-center gap-3 md:gap-4 xl:gap-5 py-4` }>
 
             <div className="flex-none flex items-center justify-center w-full">

@@ -1,9 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useSectionStore } from "@/lib/store";
-import { SECTION_IDS } from "@/lib/sections";
 
-const sections = SECTION_IDS;
+const sections = ["home", "about", "process", "marketing-services", "creative-services", "technical-services", "team", "experience", "contact"];
 
 const ScrollNavigator = () => {
   const { activeSection, setActiveSection } = useSectionStore();

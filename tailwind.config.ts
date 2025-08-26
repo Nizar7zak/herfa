@@ -1,12 +1,12 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class", // دعم dark mode عبر class
+  darkMode: ["class", "[data-theme='dark']"],
   theme: {
     screens: {
       xs: '480px',
@@ -21,10 +21,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "#fff",
-        secondary: "#462A5A",
-        active: "#C2B390",
-        accent: "#E8E8E8"
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        active: "var(--active)",
+        accent: "var(--accent)"
       },
       animation: {
         floatRotate: "floatRotate 13s ease-in-out infinite",
@@ -39,4 +39,6 @@ export default {
     },
   },
   plugins: [],
-} satisfies Config;
+};
+
+export default config;
