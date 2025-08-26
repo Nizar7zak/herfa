@@ -54,7 +54,19 @@ const Navbar = () => {
                 <Image src={ Animation } alt="Logo-herfa" className="transition-all duration-500" />
             </div>
 
-            <div className="lg:hidden fixed top-6 right-4 z-50 flex items-center gap-2">
+            <div className={`lg:hidden fixed top-6 ${lang === 'ar' ? 'right-4' : 'left-4'} z-50 flex items-center gap-2`}>
+                <button onClick={ () => setIsOpen( !isOpen ) } className="text-white text-3xl">
+                    { isOpen ? <FaTimes /> : <CgMenuGridO size={ 35 } /> }
+                </button>
+            </div>
+
+            <div className="lg:hidden fixed top-6 left-1/2 transform -translate-x-1/2 z-[60] flex items-center gap-2">
+                <button onClick={() => toggleLanguage()} aria-label="Arabic" className={`p-1 rounded bg-white/20 backdrop-blur ${lang==='ar'?'ring-2 ring-white/70':''}`}>
+                    <img src="https://flagcdn.com/w20/sa.png" alt="SA" width="20" height="15" />
+                </button>
+                <button onClick={() => toggleLanguage()} aria-label="English" className={`p-1 rounded bg-white/20 backdrop-blur ${lang==='en'?'ring-2 ring-white/70':''}`}>
+                    <img src="https://flagcdn.com/w20/gb.png" alt="UK" width="20" height="15" />
+                </button>
                 <button onClick={toggleTheme} aria-label="Toggle theme" className="p-1 rounded bg-white/20 backdrop-blur">
                     {theme === 'dark' ? (
                         <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,9 +77,6 @@ const Navbar = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                         </svg>
                     )}
-                </button>
-                <button onClick={ () => setIsOpen( !isOpen ) } className="text-white text-3xl">
-                    { isOpen ? <FaTimes /> : <CgMenuGridO size={ 35 } /> }
                 </button>
             </div>
 
@@ -105,26 +114,9 @@ const Navbar = () => {
                         </button>
                     ) ) }
                 </div>
-                <div className="mb-10 flex items-center gap-4">
-                    <button onClick={() => toggleLanguage()} aria-label="Arabic" className={`p-1 rounded ${lang==='ar'?'ring-2 ring-white/70':''}`}>
-                        <img src="https://flagcdn.com/w20/sa.png" alt="SA" width="20" height="15" />
-                    </button>
-                    <button onClick={() => toggleLanguage()} aria-label="English" className={`p-1 rounded ${lang==='en'?'ring-2 ring-white/70':''}`}>
-                        <img src="https://flagcdn.com/w20/gb.png" alt="UK" width="20" height="15" />
-                    </button>
-                    <button onClick={toggleTheme} aria-label="Toggle theme" className="p-1 rounded bg-white/20 backdrop-blur">
-                        {theme === 'dark' ? (
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
-                        ) : (
-                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                            </svg>
-                        )}
-                    </button>
+                <div className="mb-10">
+                    <SocialIcons />
                 </div>
-                <SocialIcons />
 
             </div>
             <div className={`hidden lg:flex fixed top-6 ${lang==='ar' ? 'right-[3.0625rem]' : 'left-[3.0625rem]'} z-50 gap-2`}>
