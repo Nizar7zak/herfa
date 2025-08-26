@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Alexandria } from "next/font/google";
 import { I18nProvider } from "./providers/I18nProvider";
+import ClientLayout from "./components/ClientLayout";
 
 const alexandria = Alexandria({ subsets: ["arabic"] });
 
@@ -18,14 +19,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
       <body className={alexandria.className}>
         <I18nProvider>
-          {children}
+          <ClientLayout>
+            {children}
+          </ClientLayout>
         </I18nProvider>
       </body>
     </html>

@@ -57,16 +57,6 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
     localStorage.setItem(STORAGE_KEY, lang);
     localStorage.setItem(THEME_STORAGE_KEY, theme);
-
-    const html = document.documentElement;
-    html.setAttribute("lang", lang);
-    html.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-
-    if (theme === "dark") {
-      html.setAttribute("data-theme", "dark");
-    } else {
-      html.removeAttribute("data-theme");
-    }
   }, [lang, theme, mounted]);
 
   const t = useMemo(() => (key: string) => messages[key] ?? key, [messages]);
@@ -80,8 +70,6 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     toggleLanguage: () => setLang(prev => (prev === "ar" ? "en" : "ar")),
     toggleTheme: () => setTheme(prev => (prev === "light" ? "dark" : "light")),
   }), [lang, theme, t]);
-
-  if (!mounted) return null;
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }
