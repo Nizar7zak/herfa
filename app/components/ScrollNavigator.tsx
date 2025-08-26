@@ -32,7 +32,7 @@ const ScrollNavigator = () => {
 
         document.getElementById(nextSection)?.scrollIntoView({ behavior: "smooth" });
 
-        setActiveSection(nextSection);
+        setActiveSection(nextSection as "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "team" | "experience" | "contact");
       }
     };
 

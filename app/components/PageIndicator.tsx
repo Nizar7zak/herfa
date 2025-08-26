@@ -1,6 +1,7 @@
 "use client";
 import { useSectionStore } from "@/lib/store";
-import type { SectionId } from "@/lib/sections";
+
+type SectionId = "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "team" | "experience" | "contact";
 
 const sections: { id: SectionId; label: string; subSections?: { id: SectionId; label: string }[] }[] = [
     { id: "home", label: "01" },

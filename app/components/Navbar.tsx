@@ -36,7 +36,7 @@ const Navbar = () => {
 
         if ( index !== -1 ) {
             document.getElementById( id )?.scrollIntoView( { behavior: "smooth" } );
-            setActiveSection( sections[ index ].id as any );
+            setActiveSection( sections[ index ].id as "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "team" | "experience" | "contact" );
             setIsOpen( false );
         }
     };
