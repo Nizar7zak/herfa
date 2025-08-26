@@ -1,38 +1,39 @@
 "use client";
 import { useSectionStore } from "@/lib/store";
+import type { SectionId } from "@/lib/sections";
 
-const sections = [
-    { id: "الرئيسية", label: "01" },
-    { id: "من-نحن", label: "02" },
-    { id: "آلية-عملنا", label: "03" },
+const sections: { id: SectionId; label: string; subSections?: { id: SectionId; label: string }[] }[] = [
+    { id: "home", label: "01" },
+    { id: "about", label: "02" },
+    { id: "process", label: "03" },
     {
-        id: "الخدمات-التسويقية",
+        id: "marketing-services",
         label: "04",
         subSections: [
-            { id: "الخدمات-التسويقية", label: "" },
-            { id: "الخدمات-الإبداعية", label: "" },
-            { id: "الخدمات-التقنية", label: "" }
+            { id: "marketing-services", label: "" },
+            { id: "creative-services", label: "" },
+            { id: "technical-services", label: "" }
         ]
     },
-    { id: "فريق-العمل", label: "05" },
-    { id: "خبراتنا", label: "06" },
-    { id: "تواصل-معنا", label: "07" },
+    { id: "team", label: "05" },
+    { id: "experience", label: "06" },
+    { id: "contact", label: "07" },
 ];
 
 const PageIndicator = () => {
     const { activeSection, setActiveSection } = useSectionStore();
 
-    const isServicesActive = ["الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية"].includes(activeSection);
+    const isServicesActive = ["marketing-services", "creative-services", "technical-services"].includes(activeSection);
 
     return (
-        <div className="fixed right-[5.93rem] top-1/2 transform -translate-y-1/2  flex-col space-y-4 hidden lg:flex">
+        <div className={`fixed ${activeSection ? '' : ''} ${typeof window !== 'undefined' && document.documentElement.dir === 'rtl' ? 'right-[5.93rem]' : 'left-[5.93rem]'} top-1/2 transform -translate-y-1/2  flex-col space-y-4 hidden lg:flex`}>
             {sections.map((section) => (
                 <div key={section.id} className="flex flex-col items-center">
                     <a
                         onClick={() => setActiveSection(section.id)}
                         href={`#${section.id}`}
                         className={`transition-all ${
-                            activeSection === section.id || (section.id === "الخدمات-التسويقية" && isServicesActive)
+                            activeSection === section.id || (section.id === "marketing-services" && isServicesActive)
                                 ? "text-active font-bold text-xl"
                                 : "text-primary"
                         }`}

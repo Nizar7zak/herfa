@@ -16,13 +16,15 @@ import Ts from "@/public/team/ts.svg"
 import Github from "@/public/team/github.svg"
 import Sql from "@/public/team/sql.svg"
 import React from "@/public/team/react.svg"
+import { useI18n } from "@/app/providers/I18nProvider";
 
 const TeamMembers = () => {
+    const { t, lang } = useI18n();
 
     const members = [
         { 
-            fullName: "أحمد العسقلاني", 
-            src: Master, jobDescription: "موشن جرافيك | UI\UX | مونتاج", 
+            fullName: lang === 'ar' ? "أحمد العسقلاني" : "Ahmad Al-Asqalani", 
+            src: Master, jobDescription: lang === 'ar' ? "موشن جرافيك | UI/UX | مونتاج" : "Motion Graphics | UI/UX | Video Editing", 
             skillsIcons: [ 
                 Fifth, 
                 Fourth, 
@@ -31,9 +33,9 @@ const TeamMembers = () => {
             ] 
         },
         { 
-            fullName: "سامر البرقوني", 
+            fullName: lang === 'ar' ? "سامر البرقوني" : "Samer Al-Barqouni", 
             src: Wa6n, 
-            jobDescription: "تصميم الجرافيكي | تصميم المطبوعات", 
+            jobDescription: lang === 'ar' ? "تصميم الجرافيكي | تصميم المطبوعات" : "Graphic Design | Print Design", 
             skillsIcons: [ 
                 Fifth, 
                 Second, 
@@ -43,9 +45,9 @@ const TeamMembers = () => {
             ] 
         },
         { 
-            fullName: "نـــزار زقـــوت", 
+            fullName: lang === 'ar' ? "نـــزار زقـــوت" : "Nezar Zaqout", 
             src: Nezar, 
-            jobDescription: "برمجة مواقع ويب | متخصص كلاود", 
+            jobDescription: lang === 'ar' ? "برمجة مواقع ويب | متخصص كلاود" : "Web Development | Cloud Specialist", 
             skillsIcons: [ 
                 Aws, 
                 React,
@@ -56,9 +58,9 @@ const TeamMembers = () => {
             ] 
         },
         { 
-            fullName: "سليم الحسنات", 
+            fullName: lang === 'ar' ? "سليم الحسنات" : "Saleem Al-Hasanat", 
             src: Salim, 
-            jobDescription: "تصوير | تسويق إلكتروني", 
+            jobDescription: lang === 'ar' ? "تصوير | تسويق إلكتروني" : "Photography | Digital Marketing", 
             skillsIcons: [ 
                 Fifth, 
                 Second, 
@@ -67,8 +69,8 @@ const TeamMembers = () => {
         },
     ]
     return (
-        <section id="فريق-العمل" className=" lg:h-screen flex flex-col justify-center items-center gap-8 md:gap-12 lg:gap-16 ">
-            <Title text="فريـــق العمـــل" />
+        <section id="team" className=" lg:h-screen flex flex-col justify-center items-center gap-8 md:gap-12 lg:gap-16 ">
+            <Title text={t('team.title')} />
 
             <div className="flex justify-center items-center gap-x-8 gap-y-12 xl:gap-x-8 xl:gap-y-16 flex-wrap ">
                 { members.map( (

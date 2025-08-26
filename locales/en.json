@@ -1,0 +1,76 @@
+{
+  "navbar.home": "Home",
+  "navbar.about": "About Us",
+  "navbar.process": "How We Work",
+  "navbar.services": "Services",
+  "navbar.marketing": "Marketing Services",
+  "navbar.creative": "Creative Services",
+  "navbar.technical": "Technical Services",
+  "navbar.team": "Team",
+  "navbar.experience": "Our Experience",
+  "navbar.contact": "Contact Us",
+
+  "common.motto": "Push the boundaries of creativity",
+
+  "about.title": "About Us",
+  "about.desc1": "Herfa draws inspiration from Saudi heritage, reflecting traditional Saudi crafts at its core with a modern innovative touch.",
+  "about.desc2": "We chose the purple color inspired by lavender, a flower that represents authenticity and generosity in Saudi culture, to symbolize excellence and creativity.",
+  "about.visionTitle": "Our Vision",
+  "about.visionDesc": "To become pioneers in delivering innovative solutions that blend deep-rooted heritage with modern digital innovation.",
+
+  "process.title": "How We Work",
+  "process.desc": "The actual path we follow together to reach the goal",
+  "process.steps.0": "Understanding the idea",
+  "process.steps.1": "In-depth analysis",
+  "process.steps.2": "Structured planning",
+  "process.steps.3": "Design and build",
+  "process.steps.4": "Execution",
+  "process.steps.5": "Testing",
+  "process.steps.6": "Monitoring and evaluation",
+
+  "marketing.title": "Marketing Services",
+  "marketing.desc": "Every business (products or services) needs exceptional and out-of-the-box marketing strategies. We offer a comprehensive set of marketing services including:",
+  "marketing.cards.1": "Influencer Marketing",
+  "marketing.cards.2": "SEO Marketing",
+  "marketing.cards.3": "Content Writing",
+  "marketing.cards.4": "Social Media Management",
+  "marketing.cards.5": "Campaign Launching & Management",
+
+  "creative.title": "Creative Services",
+  "creative.desc": "With the widespread growth of visual content online and its strong impact on audiences, we offer the following creative services:",
+  "creative.cards.1": "Graphic Design",
+  "creative.cards.2": "Brand Identity",
+  "creative.cards.3": "Motion Graphics",
+  "creative.cards.4": "Video Editing",
+  "creative.cards.5": "Creative Photography",
+
+  "technical.title": "Technical Services",
+  "technical.desc": "Because any business that isn't online is fading away, we provide the following technical services:",
+  "technical.cards.1": "Websites and E-commerce Development",
+  "technical.cards.2": "UI/UX Design",
+  "technical.cards.3": "Mobile App Development",
+
+  "team.title": "Our Team",
+
+  "experience.title": "Our Experience",
+  "experience.desc": "A creative and professional team in advertising and marketing, driven by passion and commitment to achieving your goals with innovative and integrated solutions.",
+
+  "contact.title": "Contact Us",
+  "contact.desc": "We are here to turn your ideas into reality! Whether you're looking for eye-catching creative design or professional editing that tells your story, our team is ready to work with you step by step.",
+  "contact.helpQuestion": "How can we help you?",
+  "contact.answers.0": "Inquiries about our services",
+  "contact.answers.1": "Request a custom quotation",
+  "contact.answers.2": "Special projects or creative consultations",
+  "contact.rights": "All rights reserved 2025",
+  "form.name": "Name",
+  "form.phone": "Phone number",
+  "form.email": "Email",
+  "form.message": "Message",
+  "form.submit": "Send",
+  "form.success": "Your message has been sent successfully! Thank you.",
+  "form.error": "An error occurred while sending",
+  "form.unexpected": "An unexpected error occurred while sending"
+}
+
+
+

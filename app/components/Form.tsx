@@ -6,11 +6,13 @@ import { useForm } from "react-hook-form";
 import { z } from 'zod';
 import ErrorMessage from "@/app/components/ErrorMessage"
 import axios from "axios";
+import { useI18n } from "@/app/providers/I18nProvider";
 
 type AuthData = z.infer<typeof authSchema>
 
 
 const Form = () => {
+    const { t } = useI18n();
     const [ error, setError ] = useState( '' )
     const [ isSubmitting, setIsSubmitting ] = useState( false )
 
@@ -46,13 +48,13 @@ const Form = () => {
 
             await axios.post( '/api/contact', formData );
 
-            alert( 'تم إرسال رسالتك بنجاح! شكراً لتواصلك.' );
+            alert( t('form.success') );
 
         } catch ( error ) {
             if ( axios.isAxiosError( error ) ) {
-                setError( error.response?.data?.message || 'حدث خطأ ما أثناء الإرسال' );
+                setError( error.response?.data?.message || t('form.error') );
             } else {
-                setError( 'حدث خطأ غير متوقع أثناء الإرسال' );
+                setError( t('form.unexpected') );
             }
         } finally {
             setIsSubmitting( false );
@@ -66,20 +68,20 @@ const Form = () => {
                 <div className="w-full lg:w-[48%]" >
                     <input
                         type="text"
-                        placeholder="الاسم"
+                        placeholder={t('form.name')}
                         { ...register( 'name' ) }
                         className="text-secondary w-full py-4 px-4 lg:px-2 lg:py-2 xl:px-4 xl:py-4 border rounded-md focus:outline-none focus:ring-4 focus:ring-active mb-2"
-                        aria-label="الاسم"
+                        aria-label={t('form.name')}
                     />
                     { errors.name && <ErrorMessage>{ errors.name.message }</ErrorMessage> }
                 </div>
                 <div className="w-full lg:w-[48%]">
                     <input
                         type="text"
-                        placeholder="رقم الهاتف"
+                        placeholder={t('form.phone')}
                         { ...register( 'phone', { required: 'يرجى كتابة رقم الهاتف' } ) }
                         className="text-secondary w-full py-4 px-4 lg:px-2 lg:py-2 xl:px-4 xl:py-4 border rounded-md focus:outline-none focus:ring-4 focus:ring-active mb-2"
-                        aria-label="رقم الهاتف"
+                        aria-label={t('form.phone')}
                     />
                     { errors.phone && <ErrorMessage>{ errors.phone.message }</ErrorMessage> }
                 </div>
@@ -89,10 +91,10 @@ const Form = () => {
             <div className="w-full">
                 <input
                     type="email"
-                    placeholder="البريد الإلكتروني"
+                    placeholder={t('form.email')}
                     { ...register( 'email', { required: 'Email is required' } ) }
                     className="text-secondary w-full py-4 px-4 lg:px-2 lg:py-2 xl:px-4 xl:py-4 border rounded-md focus:outline-none focus:ring-4 focus:ring-active mb-2"
-                    aria-label="Email"
+                    aria-label={t('form.email')}
                 />
                 { errors.email && <ErrorMessage>{ errors.email.message }</ErrorMessage> }
             </div>
@@ -100,10 +102,10 @@ const Form = () => {
             <div className="w-full">
                 <input
                     type="text"
-                    placeholder="محتوى الرسالة"
+                    placeholder={t('form.message')}
                     { ...register( 'message', { required: 'يرجى كتابة الرسالة' } ) }
                     className="text-secondary w-full h-[15vh] py-4 px-4 lg:px-2 lg:py-2 xl:px-4 xl:py-4 border rounded-md focus:outline-none focus:ring-4 focus:ring-active mb-2"
-                    aria-label="محتوى الرسالة"
+                    aria-label={t('form.message')}
                 />
                 { errors.message && <ErrorMessage>{ errors.message.message }</ErrorMessage> }
 
@@ -117,7 +119,7 @@ const Form = () => {
                     hover:text-secondaryt font-bold rounded-md transition-colors duration-300 disabled:opacity-50
                 "
             >
-                إرســــــــال
+                {t('form.submit')}
             </button>
             { error && <ErrorMessage>{ error }</ErrorMessage> }
 

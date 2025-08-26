@@ -12,6 +12,7 @@ import sheem from '@/public/experince/shem.svg';
 import Image from "next/image";
 import Description from "../Description";
 import Title from "../Title";
+import { useI18n } from "@/app/providers/I18nProvider";
 
 
 const projectsOnBehance = [
@@ -38,15 +39,16 @@ const experinces = [
 ]
 
 const OurExperince = () => {
+    const { t } = useI18n();
 
 
     return (
-        <section id="خبراتنا" className="my-10 flex justify-center items-center space-y-10 flex-col md:mt-10 lg:mt-0">
+        <section id="experience" className="my-10 flex justify-center items-center space-y-10 flex-col md:mt-10 lg:mt-0">
             <div className="flex justify-center items-center xl:gap-10 w-full mt-4 flex-col lg:flex-row">
 
                 <div className=" flex flex-col justify-center items-center gap-5 lg:hidden mb-5 w-[90%]">
-                    <Title text="خبراتــنا" />
-                    <Description textPosition="center" text="فريق مبدع ومحترف في الدعاية، الإعلان، والتسويق، يجمعنا الشغف والالتزام بتحقيق أهدافكم بحلول مبتكرة ومتكاملة." />
+                    <Title text={t('experience.title')} />
+                    <Description textPosition="center" text={t('experience.desc')} />
                 </div>
 
                 <div className="flex justify-center items-center flex-col flex-wrap gap-10 lg:gap-6 xl:gap-7 

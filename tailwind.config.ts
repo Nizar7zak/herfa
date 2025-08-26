@@ -6,6 +6,7 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class", // دعم dark mode عبر class
   theme: {
     screens: {
       xs: '480px',
@@ -24,7 +25,6 @@ export default {
         secondary: "#462A5A",
         active: "#C2B390",
         accent: "#E8E8E8"
-
       },
       animation: {
         floatRotate: "floatRotate 13s ease-in-out infinite",

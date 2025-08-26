@@ -1,18 +1,19 @@
 import { create } from "zustand";
+import type { SectionId } from "./sections";
 
 type State = {
-  activeSection: string;
+  activeSection: SectionId;
   isHome: boolean;
-  setActiveSection: (section: string) => void;
+  setActiveSection: (section: SectionId) => void;
 };
 
 
 export const useSectionStore = create<State>((set) => ({
-  activeSection: "الرئيسية",
+  activeSection: "home",
   isHome: true,
   setActiveSection: (section) =>
     set({
       activeSection: section,
-      isHome: section === "الرئيسية",
+      isHome: section === "home",
     }),
 }));

@@ -1,19 +1,21 @@
 import ServiceSection from "../Services";
+import { useI18n } from "@/app/providers/I18nProvider";
 
 const CreativeService = () => {
+    const { t } = useI18n();
     const creativeCards = [
-        { label: "تصميم الجرافيك ", id: "1", src: "/creative/first.gif" },
-        { label: "بناء الهوية البصرية", id: "2", src: "/creative/second.gif" },
-        { label: "الموشن جرافيك", id: "3", src: "/creative/third.gif" },
-        { label: "مونتاج الفيديو", id: "4", src: "/creative/fourth.gif" },
-        { label: "التصوير الابداعي", id: "5", src: "/creative/fifth.gif" },
+        { label: t('creative.cards.1'), id: "1", src: "/creative/first.gif" },
+        { label: t('creative.cards.2'), id: "2", src: "/creative/second.gif" },
+        { label: t('creative.cards.3'), id: "3", src: "/creative/third.gif" },
+        { label: t('creative.cards.4'), id: "4", src: "/creative/fourth.gif" },
+        { label: t('creative.cards.5'), id: "5", src: "/creative/fifth.gif" },
     ];
 
     return (
         <ServiceSection
-            id="الخدمات-الإبداعية"
-            title="الخدمـات الإبداعيـــة"
-            description="في ظل انتشار المحتوى المرئي بشكل واسع على الانترنت، والنتائج التي تحققها على الجمهور، لذلك نقدم خدماتنا الإبداعية التالية:"
+            id="creative-services"
+            title={t('creative.title')}
+            description={t('creative.desc')}
             cards={ creativeCards }
         />
     );

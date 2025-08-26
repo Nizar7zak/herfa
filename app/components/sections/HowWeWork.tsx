@@ -1,10 +1,11 @@
 import Naksha from '@/public/aboveHowWeWork.svg';
 import { motion, useMotionValue } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../Card";
 import Description from "../Description";
 import Title from "../Title";
+import { useI18n } from '@/app/providers/I18nProvider';
 
 import Fifth from '@/public/howwework/fifth.svg';
 import First from '@/public/howwework/first.svg';
@@ -31,18 +32,22 @@ interface SliderItem {
 }
 
 
-const initialSliderContent: SliderItem[] = [
-  { content: "فهم ومعرفة الفكرة", desktopSrc: First, mobileSrc: MbFirst },
-  { content: "التحليل العميق", desktopSrc: Second, mobileSrc: MbSecond },
-  { content: "التخطيط المنظم", desktopSrc: Third, mobileSrc: MbThird },
-  { content: "التصميم والبناء", desktopSrc: Fourth, mobileSrc: MbFourth },
-  { content: "التنفيذ", desktopSrc: Fifth, mobileSrc: MbFifth },
-  { content: "الاختبـــار", desktopSrc: Sixth, mobileSrc: MbSixth },
-  { content: "المتابعة والتقيم", desktopSrc: Seventh, mobileSrc: MbSeventh },
-];
-
 const HowWeWork = () => {
-  const [ sliderContent, setSliderContent ] = useState( initialSliderContent );
+  const { t } = useI18n();
+  const [ sliderContent, setSliderContent ] = useState<SliderItem[]>([]);
+
+  useEffect(() => {
+    setSliderContent([
+      { content: t('process.steps.0'), desktopSrc: First, mobileSrc: MbFirst },
+      { content: t('process.steps.1'), desktopSrc: Second, mobileSrc: MbSecond },
+      { content: t('process.steps.2'), desktopSrc: Third, mobileSrc: MbThird },
+      { content: t('process.steps.3'), desktopSrc: Fourth, mobileSrc: MbFourth },
+      { content: t('process.steps.4'), desktopSrc: Fifth, mobileSrc: MbFifth },
+      { content: t('process.steps.5'), desktopSrc: Sixth, mobileSrc: MbSixth },
+      { content: t('process.steps.6'), desktopSrc: Seventh, mobileSrc: MbSeventh },
+    ]);
+  }, [t]);
+
   const [ xOffset, setXOffset ] = useState( -470 );
   const x = useMotionValue( xOffset );
 
@@ -56,7 +61,7 @@ const HowWeWork = () => {
   const descriptionColor = "text-secondary lg:text-primary"
 
   return (
-    <section id="آلية-عملنا"
+    <section id="process"
       className=" 
       shadow-2xl shadow-black/50 lg:shadow-none relative
     bg-primary mt-56 mb-16 rounded-[3rem] lg:rounded-none
@@ -70,8 +75,8 @@ const HowWeWork = () => {
       </div>
       <div>
         <div className="w-full flex flex-col space-y-4 justify-center items-center lg:justify-start lg:items-start">
-          <Title text="آليــة عملنـــا" textColor={ titleColor } />
-          <Description text="المسار الفعلي الذي نسيره معاً للوصول إلى الهدف"
+          <Title text={t('process.title')} textColor={ titleColor } />
+          <Description text={t('process.desc')}
             textPosition="right"
             textColor={ descriptionColor }
           />
@@ -117,7 +122,7 @@ const HowWeWork = () => {
             whileTap={ { cursor: "grabbing" } }
             transition={ { ease: "easeOut", duration: 0.4 } }
           >
-            { initialSliderContent.map( ( { content, mobileSrc } ) => (
+            { sliderContent.map( ( { content, mobileSrc } ) => (
               <Card key={ content } text={ content } srcImage={ mobileSrc } mobileSrc={ mobileSrc } isService={ false } />
             ) ) }
           </motion.div>

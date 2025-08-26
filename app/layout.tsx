@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { Alexandria } from "next/font/google";
+import { I18nProvider } from "./providers/I18nProvider";
 
 const alexandria = Alexandria({ subsets: ["arabic"] });
 
@@ -22,7 +23,11 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" href="/favicon.png" />
       </head>
-      <body className={alexandria.className}>{children}</body>
+      <body className={alexandria.className}>
+        <I18nProvider>
+          {children}
+        </I18nProvider>
+      </body>
     </html>
   );
 }

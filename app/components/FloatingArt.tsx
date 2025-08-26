@@ -2,10 +2,12 @@
 import ArtSide from "@/public/Union.svg";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useI18n } from "@/app/providers/I18nProvider";
 
 const FloatingArt = () => {
+  const { lang } = useI18n();
   return (
-    <div className={ `fixed top-0 h-screen overflow-hidden hidden lg:flex flex-col right-0` }>
+    <div className={ `fixed top-0 h-screen overflow-hidden hidden lg:flex flex-col ${lang==='ar' ? 'right-0' : 'left-0'}` }>
       <motion.div
         className="flex flex-col"
         animate={ { y: [ "0%", "-50%" ] } }

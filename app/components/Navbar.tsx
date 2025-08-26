@@ -1,5 +1,6 @@
 "use client";
 import { useSectionStore } from "@/lib/store";
+import { useI18n } from "@/app/providers/I18nProvider";
 import Animation from '@/public/Vector.svg';
 import Image from "next/image";
 import { useState } from "react";
@@ -8,45 +9,46 @@ import { FaTimes } from "react-icons/fa";
 import SocialIcons from "./SocialIcons";
 
 const sections = [
-    { id: "الرئيسية", label: "الرئيسية" },
-    { id: "من-نحن", label: "من نحن" },
-    { id: "آلية-عملنا", label: "آلية عملنا" },
+    { id: "home", labelKey: "navbar.home" },
+    { id: "about", labelKey: "navbar.about" },
+    { id: "process", labelKey: "navbar.process" },
     {
-        id: "الخدمات-التسويقية",
-        label: "خدماتنا",
+        id: "marketing-services",
+        labelKey: "navbar.services",
         subSections: [
-            { id: "الخدمات-التسويقية", label: "الخدمات التسويقية" },
-            { id: "الخدمات-الإبداعية", label: "الخدمات الإبداعية" },
-            { id: "الخدمات-التقنية", label: "الخدمات التقنية" }
+            { id: "marketing-services", labelKey: "navbar.marketing" },
+            { id: "creative-services", labelKey: "navbar.creative" },
+            { id: "technical-services", labelKey: "navbar.technical" }
         ]
     },
-    { id: "فريق-العمل", label: "فريق العمل" },
-    { id: "خبراتنا", label: "خبراتنا" },
-    { id: "تواصل-معنا", label: "تواصل معنا" },
+    { id: "team", labelKey: "navbar.team" },
+    { id: "experience", labelKey: "navbar.experience" },
+    { id: "contact", labelKey: "navbar.contact" },
 ];
 
 const Navbar = () => {
     const { activeSection, isHome, setActiveSection } = useSectionStore();
+    const { t, toggleLanguage, lang, toggleTheme, theme } = useI18n();
     const [ isOpen, setIsOpen ] = useState( false );
 
-    const handleClick = ( id: string ) => {
+    const handleClick = ( id: typeof sections[number]["id"] ) => {
         const index = sections.findIndex( ( section ) => section.id === id || ( section.subSections?.some( sub => sub.id === id ) ) );
 
         if ( index !== -1 ) {
             document.getElementById( id )?.scrollIntoView( { behavior: "smooth" } );
-            setActiveSection( sections[ index ].id );
+            setActiveSection( sections[ index ].id as any );
             setIsOpen( false );
         }
     };
 
-    const isServicesActive = [ "الخدمات-التسويقية", "الخدمات-الإبداعية", "الخدمات-التقنية" ].includes( activeSection );
+    const isServicesActive = [ "marketing-services", "creative-services", "technical-services" ].includes( activeSection );
 
     return (
         <nav className="fixed lg:top-[5.25rem] left-0 w-full z-40 px-[6.3rem] ">
             <div
                 className={ `fixed transition-all duration-500 hidden lg:block ${isHome
-                    ? "-top-[12rem] -left-[12rem] transform opacity-100 animate-floatRotate"
-                    : "-top-[25rem] -left-[25rem] transform opacity-0"
+                    ? (lang==='ar' ? "-top-[12rem] -left-[12rem]" : "-top-[12rem] -right-[12rem]") + " transform opacity-100 animate-floatRotate"
+                    : (lang==='ar' ? "-top-[25rem] -left-[25rem]" : "-top-[25rem] -right-[25rem]") + " transform opacity-0"
                     }` }
             >
                 <Image src={ Animation } alt="Logo-herfa" className="transition-all duration-500" />
@@ -63,12 +65,12 @@ const Navbar = () => {
                     <li key={ section.id }>
                         <button
                             onClick={ () => handleClick( section.id ) }
-                            className={ `transition-all text-sm 2xl:text-lg ${activeSection === section.id || ( section.id === "الخدمات-التسويقية" && isServicesActive )
+                            className={ `transition-all text-sm 2xl:text-lg ${activeSection === section.id || ( section.id === "marketing-services" && isServicesActive )
                                 ? "text-active font-bold"
                                 : "text-white"
                                 }` }
                         >
-                            { section.label }
+                            { t(section.labelKey) }
                         </button>
                     </li>
                 ) ) }
@@ -88,12 +90,50 @@ const Navbar = () => {
                             className={ `text-lg transition-all ${activeSection === section.id ? "text-active font-bold" : "text-primary"
                                 }` }
                         >
-                            { section.label }
+                            { t(section.labelKey) }
                         </button>
                     ) ) }
                 </div>
+                <div className="mb-10 flex items-center gap-4">
+                    <button onClick={() => toggleLanguage()} aria-label="Arabic" className={`p-1 rounded ${lang==='ar'?'ring-2 ring-white/70':''}`}>
+                        <img src="https://flagcdn.com/w20/sa.png" alt="SA" width="20" height="15" />
+                    </button>
+                    <button onClick={() => toggleLanguage()} aria-label="English" className={`p-1 rounded ${lang==='en'?'ring-2 ring-white/70':''}`}>
+                        <img src="https://flagcdn.com/w20/gb.png" alt="UK" width="20" height="15" />
+                    </button>
+                    <button onClick={toggleTheme} aria-label="Toggle theme" className="p-1 rounded bg-white/20 backdrop-blur">
+                        {theme === 'dark' ? (
+                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        ) : (
+                            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
                 <SocialIcons />
 
+            </div>
+            <div className={`hidden lg:flex fixed top-6 ${lang==='ar' ? 'right-6' : 'left-6'} z-50 gap-2`}>
+                <button onClick={() => toggleLanguage()} aria-label="Arabic" className={`p-1 rounded bg-white/20 backdrop-blur ${lang==='ar'?'ring-2 ring-white/70':''}`}>
+                    <img src="https://flagcdn.com/w20/sa.png" alt="SA" width="20" height="15" />
+                </button>
+                <button onClick={() => toggleLanguage()} aria-label="English" className={`p-1 rounded bg-white/20 backdrop-blur ${lang==='en'?'ring-2 ring-white/70':''}`}>
+                    <img src="https://flagcdn.com/w20/gb.png" alt="UK" width="20" height="15" />
+                </button>
+                <button onClick={toggleTheme} aria-label="Toggle theme" className="p-1 rounded bg-white/20 backdrop-blur">
+                    {theme === 'dark' ? (
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    ) : (
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    )}
+                </button>
             </div>
         </nav>
     );

@@ -7,21 +7,10 @@
   --foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   color: var(--foreground);
   background: radial-gradient(circle farthest-corner at top left, #734593 0%, #5C3479 36%, #462A5A 100%);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-html {
-  color-scheme: light !important;
 }
 
 @media (min-width: 1024px) {
@@ -34,25 +23,30 @@ html {
   .scroll-container {
     height: 100vh;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory; 
+    scroll-snap-type: y mandatory;
   }
 
   section {
     height: 100vh;
-    scroll-snap-align: start; 
+    scroll-snap-align: start;
   }
 }
-
 
 @media (max-width: 1023px) {
   .scroll-container {
     height: auto;
-    overflow-y: auto; 
-    scroll-snap-type: none; 
+    overflow-y: auto;
+    scroll-snap-type: none;
   }
 
   section {
-    height: auto; 
+    height: auto;
     scroll-snap-align: none;
   }
+}
+
+/* Dark mode مع Tailwind class */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
