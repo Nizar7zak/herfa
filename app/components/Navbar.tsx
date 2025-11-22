@@ -21,7 +21,6 @@ const sections = [
             { id: "technical-services", labelKey: "navbar.technical" }
         ]
     },
-    { id: "team", labelKey: "navbar.team" },
     { id: "experience", labelKey: "navbar.experience" },
     { id: "contact", labelKey: "navbar.contact" },
 ];
@@ -36,7 +35,7 @@ const Navbar = () => {
 
         if ( index !== -1 ) {
             document.getElementById( id )?.scrollIntoView( { behavior: "smooth" } );
-            setActiveSection( sections[ index ].id as "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "team" | "experience" | "contact" );
+            setActiveSection( sections[ index ].id as "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "experience" | "contact" );
             setIsOpen( false );
         }
     };

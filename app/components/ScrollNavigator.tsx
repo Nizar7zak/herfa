@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useSectionStore } from "@/lib/store";
 
-const sections = ["home", "about", "process", "marketing-services", "creative-services", "technical-services", "team", "experience", "contact"];
+const sections = ["home", "about", "process", "marketing-services", "creative-services", "technical-services", "experience", "contact"];
 
 const ScrollNavigator = () => {
   const { activeSection, setActiveSection } = useSectionStore();
@@ -32,7 +32,7 @@ const ScrollNavigator = () => {
 
         document.getElementById(nextSection)?.scrollIntoView({ behavior: "smooth" });
 
-        setActiveSection(nextSection as "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "team" | "experience" | "contact");
+        setActiveSection(nextSection as "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "experience" | "contact");
       }
     };
 

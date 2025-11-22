@@ -1,7 +1,7 @@
 "use client";
 import { useSectionStore } from "@/lib/store";
 
-type SectionId = "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "team" | "experience" | "contact";
+type SectionId = "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "experience" | "contact";
 
 const sections: { id: SectionId; label: string; subSections?: { id: SectionId; label: string }[] }[] = [
     { id: "home", label: "01" },
@@ -16,9 +16,8 @@ const sections: { id: SectionId; label: string; subSections?: { id: SectionId; l
             { id: "technical-services", label: "" }
         ]
     },
-    { id: "team", label: "05" },
-    { id: "experience", label: "06" },
-    { id: "contact", label: "07" },
+    { id: "experience", label: "05" },
+    { id: "contact", label: "06" },
 ];
 
 const PageIndicator = () => {

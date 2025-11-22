@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type SectionId = "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "team" | "experience" | "contact";
+type SectionId = "home" | "about" | "process" | "marketing-services" | "creative-services" | "technical-services" | "experience" | "contact";
 
 type State = {
   activeSection: SectionId;
