@@ -2,10 +2,8 @@ import Whatsapp from '@/public/whatsapp.svg'
 import Image from 'next/image'
 import { FaChevronDown } from 'react-icons/fa'
 import SocialIcons from './SocialIcons'
-import { useI18n } from '@/app/providers/I18nProvider'
 
 const Icons = () => {
-    const { lang } = useI18n();
 
     return (
         <div className="fixed bottom-[2.5rem] left-12 lg:left-0 w-full flex items-center justify-center px-[5.8rem] gap-4 z-50">
