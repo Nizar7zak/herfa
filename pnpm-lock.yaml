@@ -17,30 +17,18 @@ importers:
       '@react-email/render':
         specifier: ^1.2.1
         version: 1.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@swc/helpers':
-        specifier: ^0.5.0
-        version: 0.5.15
-      autoprefixer:
-        specifier: ^10.4.14
-        version: 10.4.21(postcss@8.5.6)
       axios:
         specifier: ^1.8.1
         version: 1.13.4
       framer-motion:
         specifier: ^12.4.10
         version: 12.30.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      mini-css-extract-plugin:
-        specifier: ^2.7.6
-        version: 2.10.0(webpack@5.104.1)
       next:
         specifier: 15.1.7
         version: 15.1.7(@babel/core@7.26.10)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       nodemailer:
         specifier: ^7.0.5
         version: 7.0.13
-      postcss:
-        specifier: ^8.4.32
-        version: 8.5.6
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -56,9 +44,6 @@ importers:
       react-icons:
         specifier: ^5.5.0
         version: 5.5.0(react@18.3.1)
-      tailwindcss:
-        specifier: ^3.4.1
-        version: 3.4.19(yaml@2.8.2)
       zod:
         specifier: ^3.24.2
         version: 3.25.76
@@ -87,12 +72,21 @@ importers:
       '@types/react-dom':
         specifier: ^18
         version: 18.3.7(@types/react@18.3.27)
+      autoprefixer:
+        specifier: ^10.4.14
+        version: 10.4.21(postcss@8.5.6)
       eslint:
         specifier: ^9
         version: 9.39.2(jiti@1.21.7)
       eslint-config-next:
         specifier: 15.1.7
         version: 15.1.7(eslint@9.39.2(jiti@1.21.7))(typescript@5.9.3)
+      postcss:
+        specifier: ^8.4.32
+        version: 8.5.6
+      tailwindcss:
+        specifier: ^3.4.1
+        version: 3.4.19(yaml@2.8.2)
       typescript:
         specifier: ^5
         version: 5.9.3
@@ -2959,12 +2953,6 @@ packages:
   mimic-function@5.0.1:
     resolution: {integrity: sha512-VP79XUPxV2CigYP3jWwAUFSku2aKqBH7uTAapFWCBqutsbmDo96KY5o8uh6U+/YSIn5OxJnXp73beVkpqMIGhA==}
     engines: {node: '>=18'}
-
-  mini-css-extract-plugin@2.10.0:
-    resolution: {integrity: sha512-540P2c5dYnJlyJxTaSloliZexv8rji6rY8FhQN+WF/82iHQfA23j/xtJx97L+mXOML27EqksSek/g4eK7jaL3g==}
-    engines: {node: '>= 12.13.0'}
-    peerDependencies:
-      webpack: ^5.0.0
 
   minimatch@10.1.1:
     resolution: {integrity: sha512-enIvLvRAFZYXJzkCYG5RKmPfrFArdLv+R+lbQ53BmIMLIry74bjKzX6iHAm8WYamJkhSSEabrWN5D97XnKObjQ==}
@@ -6826,12 +6814,6 @@ snapshots:
   mimic-fn@2.1.0: {}
 
   mimic-function@5.0.1: {}
-
-  mini-css-extract-plugin@2.10.0(webpack@5.104.1):
-    dependencies:
-      schema-utils: 4.3.3
-      tapable: 2.3.0
-      webpack: 5.104.1(esbuild@0.25.10)
 
   minimatch@10.1.1:
     dependencies:
