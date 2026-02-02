@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import "./globals.css";
 
 import { Alexandria } from "next/font/google";
 import { I18nProvider } from "./providers/I18nProvider";
@@ -19,10 +18,70 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html>
+    <html style={{ colorScheme: 'light' }}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" href="/favicon.png" />
+        <style>{`
+          :root {
+            --background: #462A5A;
+            --foreground: #fff;
+            --primary: #fff;
+            --secondary: #462A5A;
+            --active: #C2B390;
+            --accent: #E8E8E8;
+          }
+          [data-theme="dark"] {
+            --background: #0f0f23;
+            --foreground: #ffffff;
+            --primary: #ffffff;
+            --secondary: #1a1a2e;
+            --active: #C2B390;
+            --accent: #16213e;
+          }
+          [data-theme="dark"] * {
+            color-scheme: dark;
+          }
+          body {
+            color: var(--foreground);
+            background: radial-gradient(circle farthest-corner at top left, #734593 0%, #5C3479 36%, var(--background) 100%);
+            font-family: Arial, Helvetica, sans-serif;
+            transition: all 0.3s ease;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+          }
+          [data-theme="dark"] body {
+            background: radial-gradient(circle farthest-corner at top left, #1a1a2e 0%, #0f0f23 36%, var(--background) 100%);
+          }
+          @media (min-width: 1024px) {
+            html, body {
+              scroll-behavior: smooth;
+              height: 100%;
+              overflow: hidden;
+            }
+            .scroll-container {
+              height: 100vh;
+              overflow-y: scroll;
+              scroll-snap-type: y mandatory; 
+            }
+            section {
+              height: 100vh;
+              scroll-snap-align: start; 
+            }
+          }
+          @media (max-width: 1023px) {
+            .scroll-container {
+              height: auto;
+              overflow-y: auto; 
+              scroll-snap-type: none; 
+            }
+            section {
+              height: auto; 
+              scroll-snap-align: none;
+            }
+          }
+        `}</style>
       </head>
       <body className={alexandria.className}>
         <I18nProvider>
